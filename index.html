@@ -1,11 +1,2392 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=/y/">
-    <title>跳转中...</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1B3A5C">
+<title>Dongguan Yixian Clothing Factory — Custom Men's &amp; Women's Streetwear Manufacturer | OEM/ODM</title>
+<meta name="description" content="Custom men's and women's streetwear manufacturer. OEM/ODM hoodies, tees, Sweatpants and casual wear for global streetwear brands. Low MOQ, fast lead time, premium washes, prints and embroidery.">
+<link rel="preconnect" href="https://miaoda.feishu.cn" crossorigin>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap">
+<style>
+/* ===== CSS Variables ===== */
+:root {
+  --indigo: #1B3A5C;
+  --indigo-dark: #122840;
+  --indigo-light: #2C5282;
+  --copper: #C68642;
+  --copper-light: #D4A05E;
+  --cream: #F5F2EC;
+  --cream-dark: #EDE8DF;
+  --charcoal: #2A2A2A;
+  --gray: #6B7280;
+  --gray-light: #D1D5DB;
+  --white: #FFFFFF;
+  --stitch: #E8D5B7;
+  --font-display: 'Oswald', 'Arial Narrow', sans-serif;
+  --font-body: 'Manrope', 'Segoe UI', sans-serif;
+}
+
+/* ===== Reset & Base ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body {
+  font-family: var(--font-body);
+  color: var(--charcoal);
+  background: var(--cream);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; font-family: inherit; font-size: inherit; border: none; background: none; }
+ul { list-style: none; }
+:focus-visible { outline: 2px solid var(--copper); outline-offset: 2px; }
+::selection { background: var(--copper); color: var(--white); }
+
+/* ===== Stitch Line Signature Element ===== */
+.stitch-line {
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--copper) 0px,
+    var(--copper) 8px,
+    transparent 8px,
+    transparent 14px
+  );
+  margin: 0 auto;
+}
+.stitch-line-full {
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--copper) 0px,
+    var(--copper) 8px,
+    transparent 8px,
+    transparent 14px
+  );
+  width: 100%;
+}
+
+/* ===== Dongguan Yixian Clothing Texture Background ===== */
+.denim-bg {
+  background-color: var(--indigo);
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.02) 0px,
+      rgba(255,255,255,0.02) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(0,0,0,0.05) 0px,
+      rgba(0,0,0,0.05) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+}
+
+/* ===== Navigation ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(27, 58, 92, 0.97);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(198, 134, 66, 0.3);
+}
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-logo-mark {
+  width: 66px;
+  height: 36px;
+  border: 2px solid var(--copper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--copper);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+.nav-link {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-link:hover, .nav-link.active { color: var(--copper-light); }
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--copper);
+}
+.nav-cta {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--copper);
+  padding: 10px 22px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--copper-light); }
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+}
+.nav-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  transition: 0.3s;
+}
+
+/* ===== Mobile Nav ===== */
+@media (max-width: 900px) {
+  .nav-links {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--indigo-dark);
+    flex-direction: column;
+    padding: 24px;
+    gap: 20px;
+    transform: translateY(-120%);
+    transition: transform 0.3s;
+    border-bottom: 2px solid var(--copper);
+  }
+  .nav-links.open { transform: translateY(0); }
+  .nav-toggle { display: flex; }
+  .nav-cta { display: none; }
+}
+
+/* ===== Page Container ===== */
+.page { display: none; min-height: 100vh; padding-top: 72px; }
+.page.active { display: block; }
+
+/* ===== Hero Section ===== */
+.hero {
+  position: relative;
+  min-height: calc(100vh - 72px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/y/bg6.avif');
+  background-size: cover;
+  background-position: center;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(18, 40, 64, 0.92) 0%,
+    rgba(27, 58, 92, 0.75) 0%,
+    rgba(27, 58, 92, 0.4) 0%
+  );
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  width: 100%;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-eyebrow {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--copper-light);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 40px;
+  height: 2px;
+  background: var(--copper);
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 7vw, 84px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.05;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  max-width: 700px;
+}
+.hero-title span { color: var(--copper-light); }
+.hero-subtitle {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.85);
+  max-width: 520px;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--copper);
+  padding: 16px 36px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn-primary:hover {
+  background: var(--copper-light);
+  transform: translateY(-2px);
+}
+.btn-outline {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  border: 2px solid rgba(255,255,255,0.4);
+  padding: 14px 34px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn-outline:hover {
+  border-color: var(--copper);
+  color: var(--copper-light);
+}
+.hero-stats {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  width: 100%;
+  background: rgba(18, 40, 64, 0.85);
+  border-top: 1px solid rgba(198, 134, 66, 0.3);
+}
+.hero-stats-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 28px 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.hero-stat-num {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--copper-light);
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+@media (max-width: 768px) {
+  .hero-stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .hero-content { padding-top: 64px; padding-bottom: 64px; }
+}
+
+/* ===== Section Common ===== */
+.section {
+  padding: 100px 24px;
+}
+.section-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.section-eyebrow {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--copper);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 700;
+  color: var(--indigo);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.section-desc {
+  font-size: 16px;
+  color: var(--gray);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ===== Features Section ===== */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+.feature-card {
+  background: var(--white);
+  padding: 40px 28px;
+  border-top: 3px solid var(--copper);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(27, 58, 92, 0.12);
+}
+.feature-icon {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 24px;
+  color: var(--indigo);
+}
+.feature-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--indigo);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.feature-desc {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.7;
+}
+@media (max-width: 1024px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .features-grid { grid-template-columns: 1fr; } }
+
+/* ===== Products Preview Section ===== */
+.products-preview {
+  background: var(--cream-dark);
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.product-card {
+  background: var(--white);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.product-card:hover,
+.product-card:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(27, 58, 92, 0.15);
+}
+.product-card-img {
+  height: 320px;
+  background: var(--indigo);
+  position: relative;
+  overflow: hidden;
+}
+.product-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.product-card:hover .product-card-img img { transform: scale(1.05); }
+.product-card-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--copper);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.product-card-body {
+  padding: 28px;
+}
+.product-card-category {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--copper);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.product-card-name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--indigo);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.product-card-meta {
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+  color: var(--gray);
+}
+.product-card-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.product-card-meta strong {
+  color: var(--charcoal);
+  font-weight: 600;
+}
+@media (max-width: 900px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .products-grid { grid-template-columns: 1fr; } }
+
+/* ===== Factory Section ===== */
+.factory-section {
+  background: var(--indigo);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.factory-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 4px),
+    repeating-linear-gradient(-45deg, rgba(0,0,0,0.04) 0px, rgba(0,0,0,0.04) 1px, transparent 1px, transparent 4px);
+}
+.factory-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.factory-image {
+  border: 4px solid var(--copper);
+  overflow: hidden;
+}
+.factory-image img { width: 100%; height: 480px; object-fit: cover; }
+.factory-content .section-eyebrow { color: var(--copper-light); }
+.factory-content .section-title { color: var(--white); text-align: left; }
+.factory-text {
+  font-size: 16px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+.factory-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 36px;
+}
+.factory-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.factory-point-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--copper-light);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.factory-point-text {
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.5;
+}
+.factory-point-text strong {
+  color: var(--white);
+  display: block;
+  font-family: var(--font-display);
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+@media (max-width: 900px) {
+  .factory-inner { grid-template-columns: 1fr; gap: 40px; }
+  .factory-image img { height: 320px; }
+}
+
+/* ===== Process Section ===== */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  position: relative;
+}
+.process-step {
+  text-align: center;
+  padding: 0 16px;
+  position: relative;
+}
+.process-step-num {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--cream-dark);
+  line-height: 1;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+.process-step-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--indigo);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.process-step-desc {
+  font-size: 18px;
+  color: var(--gray);
+  line-height: 1.6;
+}
+.process-step::after {
+  content: '';
+  position: absolute;
+  top: 24px;
+  right: -50%;
+  width: 100%;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, var(--copper) 0px, var(--copper) 6px, transparent 6px, transparent 12px);
+  z-index: 0;
+}
+.process-step:last-child::after { display: none; }
+@media (max-width: 1024px) {
+  .process-steps { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .process-step::after { display: none; }
+}
+@media (max-width: 600px) {
+  .process-steps { grid-template-columns: 1fr; }
+}
+
+/* ===== CTA Section ===== */
+.cta-section {
+  background: var(--copper);
+  text-align: center;
+  padding: 80px 24px;
+}
+.cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.cta-desc {
+  font-size: 16px;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 32px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cta-btn {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--copper);
+  background: var(--white);
+  padding: 16px 40px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.cta-btn:hover {
+  background: var(--indigo);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* ===== Products List Page ===== */
+.page-header {
+  background: var(--indigo);
+  padding: 80px 24px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('https://sc04.alicdn.com/kf/H065b3f094a734e14936beb41b3e98942P/243342124/H065b3f094a734e14936beb41b3e98942P.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+}
+.page-header-content { position: relative; z-index: 2; }
+.page-header-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.page-header-breadcrumb {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 1px;
+}
+.page-header-breadcrumb a { color: var(--copper-light); }
+.page-header-breadcrumb a:hover { text-decoration: underline; }
+.page-header-breadcrumb span { margin: 0 8px; }
+
+.filter-bar {
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-light);
+  padding: 20px 24px;
+}
+.filter-bar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.filter-tag {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gray);
+  border: 1px solid var(--gray-light);
+  padding: 8px 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-tag:hover, .filter-tag.active {
+  background: var(--indigo);
+  color: var(--white);
+  border-color: var(--indigo);
+}
+.products-full-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding: 60px 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+@media (max-width: 900px) { .products-full-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .products-full-grid { grid-template-columns: 1fr; } }
+
+/* ===== Product Detail Page ===== */
+.product-detail {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+.product-detail-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+.product-detail-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.product-detail-main-img {
+  width: 100%;
+  height: 520px;
+  background: var(--indigo);
+  overflow: hidden;
+  border: 1px solid var(--gray-light);
+}
+.product-detail-main-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.product-detail-thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.product-detail-thumb {
+  height: 100px;
+  background: var(--cream-dark);
+  border: 2px solid transparent;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.2s;
+  padding: 0;
+}
+.product-detail-thumb:hover, .product-detail-thumb.active {
+  border-color: var(--copper);
+}
+.product-detail-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+.product-detail-info h1 {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--indigo);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.product-detail-sku {
+  font-size: 14px;
+  color: var(--gray);
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+.product-detail-sku strong { color: var(--copper); }
+.product-detail-desc {
+  font-size: 15px;
+  color: var(--charcoal);
+  line-height: 1.8;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--gray-light);
+}
+.product-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 36px;
+}
+.product-spec {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.product-spec-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--gray);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.product-spec-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--indigo);
+}
+.product-detail-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.btn-quote {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--copper);
+  padding: 16px 36px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.25s;
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+}
+.btn-quote:hover { background: var(--copper-light); }
+.btn-whatsapp {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--indigo);
+  border: 2px solid var(--indigo);
+  padding: 14px 34px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.25s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.btn-whatsapp:hover { background: var(--indigo); color: var(--white); }
+
+.product-detail-tabs {
+  border-top: 2px solid var(--indigo);
+  padding-top: 40px;
+}
+.tab-nav {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--gray-light);
+  margin-bottom: 32px;
+}
+.tab-btn {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray);
+  padding: 14px 28px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+  transition: all 0.2s;
+}
+.tab-btn.active { color: var(--indigo); border-bottom-color: var(--copper); }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+.tab-content h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--indigo);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.tab-content p {
+  font-size: 15px;
+  color: var(--charcoal);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.tab-content ul {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+.tab-content li {
+  font-size: 14px;
+  color: var(--charcoal);
+  line-height: 1.8;
+  list-style: disc;
+  margin-bottom: 6px;
+}
+.size-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+.size-table th, .size-table td {
+  padding: 12px 16px;
+  text-align: center;
+  border: 1px solid var(--gray-light);
+  font-size: 14px;
+}
+.size-table th {
+  background: var(--indigo);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.size-table tr:nth-child(even) { background: var(--cream); }
+
+@media (max-width: 900px) {
+  .product-detail-top { grid-template-columns: 1fr; gap: 40px; }
+  .product-detail-main-img { height: 380px; }
+}
+@media (max-width: 600px) {
+  .product-detail-thumb { height: 72px; }
+  .tab-nav { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .tab-btn { white-space: nowrap; }
+}
+
+/* ===== About Page ===== */
+.about-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+.about-hero-img {
+  border: 4px solid var(--copper);
+  overflow: hidden;
+}
+.about-hero-img img { width: 100%; height: 440px; object-fit: cover; }
+.about-hero-content .section-eyebrow { text-align: left; }
+.about-hero-content .section-title { text-align: left; margin-bottom: 24px; }
+.about-hero-text {
+  font-size: 16px;
+  color: var(--charcoal);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.about-values {
+  background: var(--cream-dark);
+  padding: 80px 24px;
+}
+.about-values-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.about-value-card {
+  background: var(--white);
+  padding: 40px 32px;
+  text-align: center;
+  border-bottom: 4px solid var(--copper);
+}
+.about-value-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 24px;
+  color: var(--indigo);
+}
+.about-value-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--indigo);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.about-value-desc {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.7;
+}
+.about-certifications {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  text-align: center;
+}
+.cert-logos {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  margin-top: 48px;
+}
+.cert-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.cert-badge {
+  width: 80px;
+  height: 80px;
+  border: 3px solid var(--indigo);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--indigo);
+  letter-spacing: 1px;
+}
+.cert-name {
+  font-size: 13px;
+  color: var(--gray);
+  letter-spacing: 0.5px;
+}
+@media (max-width: 900px) {
+  .about-hero { grid-template-columns: 1fr; gap: 40px; }
+  .about-hero-img img { height: 320px; }
+  .about-values-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== Contact Page ===== */
+.contact-layout {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+}
+.contact-info h2 {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--indigo);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.contact-info > p {
+  font-size: 15px;
+  color: var(--gray);
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+.contact-item {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--gray-light);
+}
+.contact-item:last-child { border-bottom: none; }
+.contact-item-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--indigo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--copper-light);
+}
+.contact-item-content h4 {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--indigo);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.contact-item-content p {
+  font-size: 14px;
+  color: var(--charcoal);
+  line-height: 1.6;
+}
+.contact-item-content a { color: var(--copper); font-weight: 600; }
+.contact-item-content a:hover { text-decoration: underline; }
+
+.contact-form-wrap {
+  background: var(--white);
+  padding: 48px;
+  border-top: 4px solid var(--copper);
+  box-shadow: 0 8px 32px rgba(27, 58, 92, 0.08);
+}
+.contact-form-wrap h3 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--indigo);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.contact-form-wrap > p {
+  font-size: 14px;
+  color: var(--gray);
+  margin-bottom: 32px;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.form-group label {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--indigo);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.form-group label span { color: var(--copper); }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--charcoal);
+  padding: 12px 16px;
+  border: 1px solid var(--gray-light);
+  background: var(--cream);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--copper);
+  box-shadow: 0 0 0 3px rgba(198, 134, 66, 0.15);
+  background: var(--white);
+}
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-submit {
+  width: 100%;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--copper);
+  padding: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: background 0.25s;
+  margin-top: 8px;
+}
+.form-submit:hover { background: var(--copper-light); }
+.form-submit:disabled { opacity: 0.6; cursor: default; }
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+}
+.form-success.show { display: block; }
+.form-success-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  color: #22c55e;
+}
+.form-success h4 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--indigo);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.form-success p {
+  font-size: 14px;
+  color: var(--gray);
+}
+@media (max-width: 900px) {
+  .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+  .form-row { grid-template-columns: 1fr; }
+  .contact-form-wrap { padding: 32px 24px; }
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: var(--indigo-dark);
+  color: rgba(255,255,255,0.7);
+  padding: 72px 24px 0;
+}
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 48px;
+  padding-bottom: 48px;
+}
+.footer-brand .nav-logo { margin-bottom: 20px; }
+.footer-brand p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 24px;
+}
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.6);
+  transition: all 0.2s;
+}
+.footer-social a:hover {
+  border-color: var(--copper);
+  color: var(--copper-light);
+}
+.footer-col h4 {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  position: relative;
+  padding-bottom: 12px;
+}
+.footer-col h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  background: var(--copper);
+}
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+.footer-col ul li a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer-col ul li a:hover { color: var(--copper-light); }
+.footer-col ul li a::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--copper);
+  flex-shrink: 0;
+}
+.footer-contact-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+}
+.footer-contact-item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--copper-light);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 24px 0;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+}
+.footer-bottom a { color: var(--copper-light); }
+.footer-bottom a:hover { text-decoration: underline; }
+@media (max-width: 1024px) {
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+@media (max-width: 600px) {
+  .footer-inner { grid-template-columns: 1fr; }
+}
+
+/* ===== WhatsApp Float ===== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
+}
+.whatsapp-float svg { width: 28px; height: 28px; }
+
+/* ===== Back to Top ===== */
+.back-top {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  z-index: 999;
+  width: 48px;
+  height: 48px;
+  background: var(--indigo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--copper-light);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  border: 1px solid rgba(198, 134, 66, 0.3);
+}
+.back-top.show { opacity: 1; visibility: visible; }
+.back-top:hover { background: var(--copper); color: var(--white); }
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
 </head>
 <body>
-    <p>正在跳转，如果没有自动跳转，请<a href="/y/">点击这里</a></p>
+
+<!-- ===== Navigation ===== -->
+<header class="nav">
+  <nav class="nav-inner" aria-label="Main navigation">
+    <a href="#/" class="nav-logo" data-nav="home" aria-label="STREETWEAR OEM home">
+      <span class="nav-logo-mark" aria-hidden="true">YIXIAN</span>
+      STREETWEAR OEM
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#/" class="nav-link" data-nav="home" aria-current="page">Home</a>
+      <a href="#/products" class="nav-link" data-nav="products">Products</a>
+      <a href="#/about" class="nav-link" data-nav="about">About Us</a>
+      <a href="#/contact" class="nav-link" data-nav="contact">Contact</a>
+      <a href="#/contact" class="nav-cta">Get A Quote</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- ===== HOME PAGE ===== -->
+<div class="page active" id="page-home">
+  <!-- Hero -->
+  <section class="hero" aria-label="Intro">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Custom Streetwear Manufacturer Since 2008</div>
+      <h1 class="hero-title">Crafting <span>Streetwear</span> That Defines Brands</h1>
+      <p class="hero-subtitle">OEM &amp; ODM hoodies, tees, Pant and casual wear for global streetwear brands — men's and women's. Low MOQ, premium washes, prints &amp; embroidery, and 15-day sample turnaround.</p>
+      <div class="hero-buttons">
+        <a href="#/products" class="btn-primary">View Products
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#/contact" class="btn-outline">Request Quote</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stats-inner">
+        <div>
+          <div class="hero-stat-num">15+</div>
+          <div class="hero-stat-label">Years Experience</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">500K+</div>
+          <div class="hero-stat-label">Pieces Monthly</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">30+</div>
+          <div class="hero-stat-label">Countries Served</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">200+</div>
+          <div class="hero-stat-label">Brand Partners</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section" aria-label="Why choose us">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-eyebrow">Why Choose Us</div>
+        <h2 class="section-title">Built for Streetwear Brands</h2>
+        <div class="stitch-line" style="width:80px;margin-top:20px;"></div>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+          </svg>
+          <h3 class="feature-title">Custom Design</h3>
+          <p class="feature-desc">From tech pack to pattern. In-house design team, custom fits and sizing for men's and women's lines.</p>
+        </div>
+        <div class="feature-card">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+          </svg>
+          <h3 class="feature-title">Fast Lead Time</h3>
+          <p class="feature-desc">15-day sample turnaround. Bulk production in 25-35 days. Rush orders available.</p>
+        </div>
+        <div class="feature-card">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+          </svg>
+          <h3 class="feature-title">Premium Finishes</h3>
+          <p class="feature-desc">Acid wash, stone wash, garment dye, screen print, embroidery and rhinestone embellishment — all in-house.</p>
+        </div>
+        <div class="feature-card">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c2.39 0 4.68.94 6.36 2.64"/>
+          </svg>
+          <h3 class="feature-title">Quality Assured</h3>
+          <p class="feature-desc">4-point inspection system. AQL 2.5 standard. Full compliance with EU and US regulations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Preview -->
+  <section class="section products-preview" aria-label="Featured products">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-eyebrow">Our Products</div>
+        <h2 class="section-title">Featured Collections</h2>
+        <p class="section-desc">From heavyweight hoodies and graphic tees and Jacket to acid wash and rhinestone Sweatpants — the full spectrum of custom streetwear for men and women.</p>
+      </div>
+      <div class="products-grid" id="homeProductsGrid"></div>
+      <div style="text-align:center;margin-top:48px;">
+        <a href="#/products" class="btn-primary" style="color:var(--white);">View All Products
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Factory Section -->
+  <section class="section factory-section" aria-label="Our factory">
+    <div class="section-inner">
+      <div class="factory-inner">
+        <div class="factory-image">
+          <img src="/y/gs.avif" alt="OEM Streetwear garment factory production line">
+        </div>
+        <div class="factory-content">
+          <div class="section-eyebrow">Our Factory</div>
+          <h2 class="section-title">12,000 SQM of Streetwear Expertise</h2>
+          <p class="factory-text">Located in Humen, Dongguan — the garment capital of China. Our vertically integrated facility handles everything from fabric sourcing and cutting to sewing, washing, printing and finishing under one roof.</p>
+          <div class="factory-points">
+            <div class="factory-point">
+              <svg class="factory-point-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <div class="factory-point-text"><strong>300+ Sewing Machines</strong>Juki &amp; Pegasus industrial equipment</div>
+            </div>
+            <div class="factory-point">
+              <svg class="factory-point-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <div class="factory-point-text"><strong>Wash &amp; Print Plant</strong>20+ washing machines, print &amp; embroidery lines</div>
+            </div>
+            <div class="factory-point">
+              <svg class="factory-point-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <div class="factory-point-text"><strong>500+ Skilled Workers</strong>Average 8 years garment experience</div>
+            </div>
+            <div class="factory-point">
+              <svg class="factory-point-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <div class="factory-point-text"><strong>Vertical Integration</strong>Fabric to finished garment in-house</div>
+            </div>
+          </div>
+          <a href="#/about" class="btn-outline">Learn More About Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="section" aria-label="How we work">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-eyebrow">How We Work</div>
+        <h2 class="section-title">From Concept to Container</h2>
+        <div class="stitch-line" style="width:80px;margin-top:20px;"></div>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-step-num">01</div>
+          <h3 class="process-step-title">Inquiry &amp; Design</h3>
+          <p class="process-step-desc">Share your tech pack, design or sample. We review fabric, trim and construction.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">02</div>
+          <h3 class="process-step-title">Sampling</h3>
+          <p class="process-step-desc">Prototype sample in 7-15 days. Fit, wash and detail adjustments until perfect.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">03</div>
+          <h3 class="process-step-title">Bulk Production</h3>
+          <p class="process-step-desc">Cutting, sewing, washing and finishing. Daily progress reports with photos.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">04</div>
+          <h3 class="process-step-title">QC Inspection</h3>
+          <p class="process-step-desc">4-point system at every stage. Final AQL 2.5 inspection before shipment.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">05</div>
+          <h3 class="process-step-title">Shipping</h3>
+          <p class="process-step-desc">FOB, CIF or DDP. Sea, air or express. Full documentation support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" aria-label="Get a quote">
+    <h2 class="cta-title">Ready to Start Your Streetwear Project?</h2>
+    <p class="cta-desc">Send us your design or tech pack. Get a free quote within 24 hours.</p>
+    <a href="#/contact" class="cta-btn">Request Free Quote
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </section>
+</div>
+
+<!-- ===== PRODUCTS PAGE ===== -->
+<div class="page" id="page-products">
+  <div class="page-header">
+    <div class="page-header-content">
+      <h1 class="page-header-title">Our Products</h1>
+      <div class="page-header-breadcrumb">
+        <a href="#/">Home</a><span>/</span>Products
+      </div>
+    </div>
+  </div>
+  <div class="filter-bar">
+    <div class="filter-bar-inner" role="group" aria-label="Filter products by category">
+      <button class="filter-tag active" data-filter="all" aria-pressed="true">All Products</button>
+      <button class="filter-tag" data-filter="hoodie" aria-pressed="false">Hoodies</button>
+      <button class="filter-tag" data-filter="tee" aria-pressed="false">Tees</button>
+      <button class="filter-tag" data-filter="jacket" aria-pressed="false">Jackets</button>
+      <button class="filter-tag" data-filter="Sweatpants" aria-pressed="false">Sweatpants</button>
+      <button class="filter-tag" data-filter="pants" aria-pressed="false">Cargo Pants</button>
+      <button class="filter-tag" data-filter="vest" aria-pressed="false">Vests</button>
+    </div>
+  </div>
+  <div class="products-full-grid" id="productsFullGrid"></div>
+</div>
+
+<!-- ===== PRODUCT DETAIL PAGE ===== -->
+<div class="page" id="page-product-detail">
+  <div class="page-header" style="padding:40px 24px 32px;">
+    <div class="page-header-content">
+      <div class="page-header-breadcrumb" style="margin-bottom:12px;">
+        <a href="#/">Home</a><span>/</span><a href="#/products">Products</a><span>/</span><span id="detailBreadcrumb">Classic Trucker Jacket</span>
+      </div>
+    </div>
+  </div>
+  <div class="product-detail" id="productDetailContent"></div>
+</div>
+
+<!-- ===== ABOUT PAGE ===== -->
+<div class="page" id="page-about">
+  <div class="page-header">
+    <div class="page-header-content">
+      <h1 class="page-header-title">About YIXIAN</h1>
+      <div class="page-header-breadcrumb">
+        <a href="#/">Home</a><span>/</span>About Us
+      </div>
+    </div>
+  </div>
+
+  <div class="about-hero">
+    <div class="about-hero-img">
+      <img src="/y/gs.avif" alt="Custom fabric samples and folded garments">
+    </div>
+    <div class="about-hero-content">
+      <div class="section-eyebrow">Our Story</div>
+      <h2 class="section-title">18 Years of Streetwear Craftsmanship</h2>
+      <p class="about-hero-text">Founded in 2008 in Humen, Dongguan — the heart of China's garment industry — Dongguan Yixian Clothing started as a small sewing workshop with 20 workers and a single mission: make apparel that streetwear brands are proud to put their label on.</p>
+      <p class="about-hero-text">Today, we operate a 2,000 square meter vertically integrated facility with over 50 skilled workers, serving more than 200 brands across 30+ countries. From heavyweight hoodies and graphic tees to acid wash sweatpants and rhinestone jacket, our clients trust us to deliver consistent quality at competitive prices.</p>
+      <p class="about-hero-text">What sets us apart is our complete in-house capability — fabric development, pattern making, sampling, cutting, sewing, washing, printing and embroidery all under one roof. This means faster turnaround, tighter quality control, and true customization at every stage for both men's and women's collections.</p>
+    </div>
+  </div>
+
+  <div class="about-values">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-eyebrow">What We Stand For</div>
+        <h2 class="section-title">Our Core Values</h2>
+        <div class="stitch-line" style="width:80px;margin-top:20px;"></div>
+      </div>
+      <div class="about-values-grid">
+        <div class="about-value-card">
+          <svg class="about-value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <h3 class="about-value-title">Quality First</h3>
+          <p class="about-value-desc">Every garment passes through 4 inspection checkpoints. We reject what doesn't meet standard — no exceptions.</p>
+        </div>
+        <div class="about-value-card">
+          <svg class="about-value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
+          </svg>
+          <h3 class="about-value-title">Partner Mindset</h3>
+          <p class="about-value-desc">We don't just take orders — we invest in your brand's success. Design feedback, fabric suggestions, market insights included.</p>
+        </div>
+        <div class="about-value-card">
+          <svg class="about-value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+          </svg>
+          <h3 class="about-value-title">Sustainable Practice</h3>
+          <p class="about-value-desc">Ozone washing, laser distressing and water-recycling systems reduce our environmental footprint. OEKO-TEX certified fabrics available.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-certifications">
+    <div class="section-eyebrow">Certifications &amp; Compliance</div>
+    <h2 class="section-title">Trusted by Global Standards</h2>
+    <div class="stitch-line" style="width:80px;margin:20px auto 0;"></div>
+    <div class="cert-logos">
+      <div class="cert-item">
+        <div class="cert-badge">BSCI</div>
+        <div class="cert-name">Social Compliance</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-badge">OEKO</div>
+        <div class="cert-name">Textile Standard 100</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-badge">ISO</div>
+        <div class="cert-name">9001:2015 Quality</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-badge">WRAP</div>
+        <div class="cert-name">Responsible Production</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-badge">GOTS</div>
+        <div class="cert-name">Organic Textile</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="cta-section" aria-label="Visit our factory">
+    <h2 class="cta-title">Visit Our Factory in Humen</h2>
+    <p class="cta-desc">We welcome factory visits by appointment. See our production line and wash plant in person.</p>
+    <a href="#/contact" class="cta-btn">Schedule a Visit
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </section>
+</div>
+
+<!-- ===== CONTACT PAGE ===== -->
+<div class="page" id="page-contact">
+  <div class="page-header">
+    <div class="page-header-content">
+      <h1 class="page-header-title">Get In Touch</h1>
+      <div class="page-header-breadcrumb">
+        <a href="#/">Home</a><span>/</span>Contact
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-layout">
+    <div class="contact-info">
+      <h2>Let's Talk Streetwear</h2>
+      <p>Whether you need a quote, have a design question, or want to schedule a factory visit — our team responds within 24 hours.</p>
+
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="contact-item-content">
+          <h4>Factory Address</h4>
+          <p>No.1 Lane 2, Xiangbei Road, Wangwu, Boyong, Humen Town,<br>Dongguan, Guangdong, China 523900</p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div class="contact-item-content">
+          <h4>WhatsApp / Phone</h4>
+          <p><a href="https://wa.me/8613925571400" target="_blank" rel="noopener">+86 13925571400</a><br>Mon–Sat, 9:00–18:00 (GMT+8)</p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="contact-item-content">
+          <h4>Email</h4>
+          <p><a href="mailto:mrliu@yixianfushi.cn">mrliu@yixianfushi.cn</a><br>Quotes within 24 hours</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      <h3>Request A Quote</h3>
+      <p>Fill in the form below and our sales team will get back to you within 24 hours.</p>
+      <form id="contactForm" novalidate action="/api/inquiry" method="post">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-name">Your Name <span>*</span></label>
+            <input type="text" id="f-name" name="name" required placeholder="John Smith" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="f-company">Company</label>
+            <input type="text" id="f-company" name="company" placeholder="Your Brand / Company" autocomplete="organization">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-email">Email <span>*</span></label>
+            <input type="email" id="f-email" name="email" required placeholder="john@company.com" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="f-whatsapp">WhatsApp</label>
+            <input type="text" id="f-whatsapp" name="whatsapp" placeholder="+1 234 567 8900" autocomplete="tel">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-category">Product Category</label>
+            <select id="f-category" name="category">
+              <option value="">Select category</option>
+              <option>Hoodie</option>
+              <option>Graphic Tee</option>
+              <option>Jacket</option>
+              <option>Sweatpants</option>
+              <option>Cargo Pants</option>
+              <option>Vest</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="f-quantity">Estimated Quantity</label>
+            <select id="f-quantity" name="quantity">
+              <option value="">Select quantity</option>
+              <option>300 - 500 pcs</option>
+              <option>500 - 1,000 pcs</option>
+              <option>1,000 - 5,000 pcs</option>
+              <option>5,000+ pcs</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="f-message">Your Message <span>*</span></label>
+          <textarea id="f-message" name="message" required placeholder="Tell us about your project: design details, fabric preference, target price, timeline..."></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="formSubmitBtn">Send Inquiry</button>
+      </form>
+      <div class="form-success" id="formSuccess" role="status">
+        <svg class="form-success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+        <h4>Inquiry Sent Successfully</h4>
+        <p>Thank you! Our sales team will contact you within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#/" class="nav-logo" aria-label="STREETWEAR OEM home">
+        <span class="nav-logo-mark" aria-hidden="true">YIXIAN</span>
+        STREETWEAR OEM
+      </a>
+      <p>Custom men's and women's streetwear manufacturer based in Humen, Dongguan. OEM/ODM hoodies, tees and Jackets for global streetwear brands since 2008.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/yixianclothing/" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.facebook.com/yixianclothing/" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <!-- <a href="https://www.linkedin.com/compan/y/hoodieoem/" aria-label="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a> -->
+        <a href="https://wa.me/8613925571400" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="#/products">Hoodies</a></li>
+        <li><a href="#/products">Graphic Tees</a></li>
+        <li><a href="#/products">Jackets</a></li>
+        <li><a href="#/products">Sweatpants &amp; Pants</a></li>
+        <li><a href="#/products">Cargo Pants</a></li>
+        <li><a href="#/products">Vests</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#/about">About Us</a></li>
+        <li><a href="#/about">Our Factory</a></li>
+        <li><a href="#/about">Certifications</a></li>
+        <li><a href="#/contact">Contact Us</a></li>
+        <li><a href="#/contact">Get A Quote</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Dongguan Yixian Clothing Co., Ltd.</h4>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Humen Town, Dongguan,<br>Guangdong, China</span>
+      </div>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span>+86 139 2557 1400</span>
+      </div>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span><a href="mailto:mrliu@yixianfushi.cn">mrliu@yixianfushi.cn</a> </span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Dongguan Yixian Clothing Factory. All rights reserved. &nbsp;|&nbsp; <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms of Service</a></p>
+  </div>
+</footer>
+
+<!-- ===== WhatsApp Float ===== -->
+<a href="https://wa.me/8613925571400" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ===== Back to Top ===== -->
+<button class="back-top" id="backTop" type="button" aria-label="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+'use strict';
+
+// ===== Product Data =====
+const products = [
+  {
+    id: 'heavyweight-terry-hoodie',
+    name: 'Heavyweight Terry Hoodie',
+    category: 'hoodie',
+    categoryLabel: 'Hoodie',
+    badge: 'Bestseller',
+    image: '/y/h8.avif',
+    images: ['/y/h1.avif', '/y/h2.avif', '/y/h6.avif', '/y/h5.avif'],
+    moq: '50 pcs',
+    leadTime: '20-25 days',
+    fabric: '100% Cotton 420GSM Terry Fleece',
+    sku: 'DC-HD-001',
+    desc: 'Our signature heavyweight hoodie in 420GSM loopback terry fleece. Oversized drop-shoulder fit, double-layer hood, kangaroo pocket and ribbed cuffs. A clean canvas for screen print, embroidery and custom branding.',
+    specs: {
+      fabric: '100% Cotton Terry Fleece',
+      weight: '420 GSM',
+      moq: '50 pieces per style',
+      leadTime: '20-25 days',
+      wash: 'Garment dyed / Enzyme',
+      sizing: 'S - 3XL (custom available)'
+    }
+  },
+  {
+    id: 'oversized-graphic-tee',
+    name: 'Oversized Graphic Tee',
+    category: 'tee',
+    categoryLabel: 'Tee',
+    badge: 'New',
+    image: '/y/t1.avif',
+    images: ['/y/t2.avif', '/y/t6.avif', '/y/t4.avif', '/y/t5.avif'],
+    moq: '50 pcs',
+    leadTime: '20-25 days',
+    fabric: '100% Cotton 240GSM Jersey',
+    sku: 'DC-TE-001',
+    desc: 'Oversized boxy-fit tee in heavy 240GSM cotton jersey. Front graphic printing available in screen print, DTG or puff ink. Pre-shrunk fabric, taped shoulder seams and reinforced neck ribbing.',
+    specs: {
+      fabric: '100% Cotton Jersey',
+      weight: '220 GSM',
+      moq: '50 pieces per style',
+      leadTime: '20-25 days',
+      print: 'Screen / DTG / Puff Ink',
+      sizing: 'S - 3XL (custom available)'
+    }
+  },
+  {
+    id: 'Baseball-jacket',
+    name: 'Baseball jacket',
+    category: 'Jacket',
+    categoryLabel: 'Jacket',
+    badge: 'Popular',
+    image: '/y/jk10.avif',
+    images: ['/y/jk.avif', '/y/jk3.avif', '/y/jk2.avif', '/y/jk4.avif'],
+    moq: '50 pcs',
+    leadTime: '25-30 days',
+    fabric: '100% Cotton 12oz',
+    sku: 'DC-JK-001',
+    desc: 'Classic trucker silhouette in mottled acid wash. Bleach-treated 300gsm 100% Cotton gives every piece a one-of-a-kind finish. Pointed collar, chest flap pockets, adjustable waist tabs and branded copper hardware.',
+    specs: {
+      fabric: '100% Cotton',
+      weight: '300 GSM',
+      moq: '50 pieces per style',
+      leadTime: '25-30 days',
+      wash: 'Acid / Stone / Bleach',
+      sizing: 'S - 3XL (custom available)'
+    }
+  },
+  {
+    id: 'Sweatpants',
+    name: 'Wash Sweatpants',
+    category: 'Sweatpants',
+    categoryLabel: 'Sweatpants',
+    badge: 'Bestseller',
+    image: '/y/sp5.avif',
+    images: ['/y/sp6.avif', '/y/sp4.avif', '/y/sp9.avif', '/y/sp8.avif'],
+    moq: '50 pcs',
+    leadTime: '25-30 days',
+    fabric: '98% Cotton 2% Elastane 11oz',
+    sku: 'DC-JN-001',
+    desc: 'Streetwear statement sweatpants with hand-applied rhinestone studs along the seams and pockets. Slim stretch fit with 5-pocket styling, YKK zip and reinforced stress points. Multiple wash and stone options.',
+    specs: {
+      fabric: '98% Cotton 2% Elastane',
+      weight: '300 GSM',
+      moq: '50 pieces per style',
+      leadTime: '25-30 days',
+      details: 'Rhinestone / Studs / Patch',
+      sizing: '28 - 40 waist (custom available)'
+    }
+  },
+  {
+    id: 'cargo-pants',
+    name: 'Multi-Pocket Cargo Pants',
+    category: 'pants',
+    categoryLabel: 'Cargo Pants',
+    badge: 'New',
+    image: '/y/cargo pant4.avif',
+    images: ['/y/cargo pant1.avif', '/y/cargo pant3.avif', '/y/cargo pant2.avif', '/y/cargo pant5.avif'],
+    moq: '50 pcs',
+    leadTime: '25-30 days',
+    fabric: '100% Cotton Ripstop Twill',
+    sku: 'DC-PT-001',
+    desc: 'Utility cargo pants with six-pocket layout, drawstring waist and tapered leg. Made from durable ripstop twill with bartack reinforcement. Custom pocket styles, embroidery and reflective detailing available.',
+    specs: {
+      fabric: '100% Cotton Ripstop Twill',
+      weight: '320 GSM / 9.4 oz',
+      moq: '50 pieces per style',
+      leadTime: '25-30 days',
+      details: '6-Pocket Utility / Drawstring',
+      sizing: 'S - 3XL (custom available)'
+    }
+  },
+  {
+    id: 'vest',
+    name: 'Vest',
+    category: 'vest',
+    categoryLabel: 'Vest',
+    badge: '',
+    image: '/y/tanktop2.avif',
+    images: ['/y/tanktop3.avif', '/y/tanktop6.avif', '/y/tanktop1.avif', '/y/tanktop1.avif'],
+    moq: '50 pcs',
+    leadTime: '20-25 days',
+    fabric: '100% Cotton ',
+    sku: 'DC-VT-001',
+    desc: 'Classic vest with pointed collar and button-front closure. Perfect for streetwear layering, biker and festival looks. Custom patches, embroidery, rhinestone and distressing available.',
+    specs: {
+      fabric: '100% Cotton ',
+      weight: '220 GSM',
+      moq: '50 pieces per style',
+      leadTime: '15-20 days',
+      wash: 'Raw / Stone / Acid / Distressed',
+      sizing: 'S - 3XL (custom available)'
+    }
+  }
+];
+
+// ===== State =====
+const pages = ['home', 'products', 'product-detail', 'about', 'contact'];
+const pageTitles = {
+  home: 'Dongguan Yixian Clothing Factory — Custom Men\'s & Women\'s Streetwear | OEM/ODM',
+  products: 'Our Products |Dongguan Yixian Clothing Factory',
+  about: 'About Us | Dongguan Yixian Clothing Factory',
+  contact: 'Contact & Get A Quote | Dongguan Yixian Clothing Factory'
+};
+const SITE_NAME = 'Dongguan Yixian Clothing Factory';
+
+// ===== Router =====
+function router() {
+  const hash = window.location.hash || '#/';
+  const parts = hash.replace('#/', '').split('/');
+  const route = parts[0] || 'home';
+  const param = parts[1];
+
+  pages.forEach(p => document.getElementById('page-' + p).classList.remove('active'));
+
+  if (route === 'products') {
+    document.getElementById('page-products').classList.add('active');
+    setActiveNav('products');
+    renderProducts('all');
+    document.title = pageTitles.products;
+  } else if (route === 'product' && param) {
+    document.getElementById('page-product-detail').classList.add('active');
+    setActiveNav('products');
+    renderProductDetail(param);
+  } else if (route === 'about') {
+    document.getElementById('page-about').classList.add('active');
+    setActiveNav('about');
+    document.title = pageTitles.about;
+  } else if (route === 'contact') {
+    document.getElementById('page-contact').classList.add('active');
+    setActiveNav('contact');
+    document.title = pageTitles.contact;
+  } else {
+    document.getElementById('page-home').classList.add('active');
+    setActiveNav('home');
+    document.title = pageTitles.home;
+  }
+
+  window.scrollTo(0, 0);
+  closeMobileNav();
+}
+
+function setActiveNav(nav) {
+  document.querySelectorAll('.nav-link').forEach(link => {
+    const isActive = link.dataset.nav === nav;
+    link.classList.toggle('active', isActive);
+    if (isActive) {
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.removeAttribute('aria-current');
+    }
+  });
+}
+
+// ===== Product Card Template =====
+function productCardHTML(p) {
+  return `
+    <article class="product-card" role="link" tabindex="0" data-product="${p.id}" aria-label="View ${p.name} details">
+      <div class="product-card-img">
+        ${p.badge ? `<span class="product-card-badge">${p.badge}</span>` : ''}
+        <img src="${p.image}" alt="${p.name}" loading="lazy">
+      </div>
+      <div class="product-card-body">
+        <div class="product-card-category">${p.categoryLabel}</div>
+        <h3 class="product-card-name">${p.name}</h3>
+        <div class="product-card-meta">
+          <span>MOQ: <strong>${p.moq}</strong></span>
+          <span>Lead: <strong>${p.leadTime}</strong></span>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function renderHomeProducts() {
+  document.getElementById('homeProductsGrid').innerHTML =
+    products.slice(0, 3).map(productCardHTML).join('');
+}
+
+function renderProducts(filter) {
+  const grid = document.getElementById('productsFullGrid');
+  const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
+  grid.innerHTML = filtered.map(productCardHTML).join('');
+}
+
+// ===== Product Detail =====
+function renderProductDetail(id) {
+  const p = products.find(x => x.id === id) || products[0];
+  document.getElementById('detailBreadcrumb').textContent = p.name;
+  document.title = p.name + ' | ' + SITE_NAME;
+
+  const content = document.getElementById('productDetailContent');
+  content.innerHTML = `
+    <div class="product-detail-top">
+      <div class="product-detail-gallery">
+        <div class="product-detail-main-img">
+          <img src="${p.image}" alt="${p.name}" id="mainProductImg">
+        </div>
+        <div class="product-detail-thumbs" role="group" aria-label="Product image views">
+          ${p.images.map((img, i) => `
+            <button class="product-detail-thumb${i === 0 ? ' active' : ''}" type="button" data-src="${img}" aria-label="${p.name} view ${i + 1}">
+              <img src="${img}" alt="">
+            </button>
+          `).join('')}
+        </div>
+      </div>
+      <div class="product-detail-info">
+        <h1>${p.name}</h1>
+        <div class="product-detail-sku">SKU: <strong>${p.sku}</strong> &nbsp;|&nbsp; Category: ${p.categoryLabel}</div>
+        <p class="product-detail-desc">${p.desc}</p>
+        <div class="product-specs">
+          <div class="product-spec">
+            <span class="product-spec-label">Fabric</span>
+            <span class="product-spec-value">${p.specs.fabric}</span>
+          </div>
+          <div class="product-spec">
+            <span class="product-spec-label">Weight</span>
+            <span class="product-spec-value">${p.specs.weight}</span>
+          </div>
+          <div class="product-spec">
+            <span class="product-spec-label">MOQ</span>
+            <span class="product-spec-value">${p.specs.moq}</span>
+          </div>
+          <div class="product-spec">
+            <span class="product-spec-label">Lead Time</span>
+            <span class="product-spec-value">${p.specs.leadTime}</span>
+          </div>
+          <div class="product-spec">
+            <span class="product-spec-label">Wash Options</span>
+            <span class="product-spec-value">${p.specs.wash}</span>
+          </div>
+          <div class="product-spec">
+            <span class="product-spec-label">Sizing</span>
+            <span class="product-spec-value">${p.specs.sizing}</span>
+          </div>
+        </div>
+        <div class="product-detail-actions">
+          <a href="#/contact" class="btn-quote">Get A Quote</a>
+          <a href="https://wa.me/8613925571400" target="_blank" rel="noopener" class="btn-whatsapp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-detail-tabs">
+      <div class="tab-nav" role="tablist" aria-label="Product information">
+        <button class="tab-btn active" role="tab" aria-selected="true" data-tab="description">Description</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-tab="specs">Specifications</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-tab="size">Size Guide</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-tab="custom">Customization</button>
+      </div>
+      <div class="tab-content active" id="tab-description" role="tabpanel">
+        <h3>Product Description</h3>
+        <p>${p.desc}</p>
+        <p>This garment is manufactured in our vertically integrated facility in Humen, Dongguan. Every piece undergoes our 4-point quality inspection system before shipment. We offer full OEM/ODM services including custom labeling, packaging, and hang tags.</p>
+      </div>
+      <div class="tab-content" id="tab-specs" role="tabpanel">
+        <h3>Technical Specifications</h3>
+        <ul>
+          <li><strong>Fabric:</strong> ${p.specs.fabric}</li>
+          <li><strong>Fabric Weight:</strong> ${p.specs.weight}</li>
+          <li><strong>Construction:</strong> Triple-stitched stress points, bar-tack reinforcement</li>
+          <li><strong>Hardware:</strong> YKK zippers, custom metal buttons (branded available)</li>
+          <li><strong>Wash Techniques:</strong> ${p.specs.wash}</li>
+          <li><strong>Labeling:</strong> Woven main label, size label, care label (customizable)</li>
+          <li><strong>Packaging:</strong> Polybag + carton, or custom retail packaging</li>
+        </ul>
+      </div>
+      <div class="tab-content" id="tab-size" role="tabpanel">
+        <h3>Size Guide (Men's)</h3>
+        <p>All measurements in centimeters. Custom sizing available for OEM orders.</p>
+        <table class="size-table">
+          <thead>
+            <tr><th>Size</th><th>Chest</th><th>Shoulder</th><th>Sleeve</th><th>Length</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>S</td><td>100</td><td>44</td><td>62</td><td>66</td></tr>
+            <tr><td>M</td><td>106</td><td>46</td><td>64</td><td>68</td></tr>
+            <tr><td>L</td><td>112</td><td>48</td><td>66</td><td>70</td></tr>
+            <tr><td>XL</td><td>118</td><td>50</td><td>68</td><td>72</td></tr>
+            <tr><td>2XL</td><td>124</td><td>52</td><td>70</td><td>74</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-content" id="tab-custom" role="tabpanel">
+        <h3>Customization Options</h3>
+        <ul>
+          <li><strong>Private Label:</strong> Woven, printed, or leather main labels with your brand</li>
+          <li><strong>Hang Tags:</strong> Custom design, material, and printing</li>
+          <li><strong>Embroidery:</strong> Logo embroidery on chest, back, or sleeves</li>
+          <li><strong>Printing:</strong> Screen print, DTG, or heat transfer</li>
+          <li><strong>Hardware:</strong> Custom engraved buttons and rivets</li>
+          <li><strong>Packaging:</strong> Branded polybags, tissue paper, boxes</li>
+          <li><strong>Wash &amp; Distressing:</strong> Custom wash recipes, laser etching, hand sanding</li>
+        </ul>
+        <p style="margin-top:16px;"><a href="#/contact" style="color:var(--copper);font-weight:600;">Contact us</a> to discuss your custom requirements.</p>
+      </div>
+    </div>
+  `;
+}
+
+function switchTab(btn) {
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.tab-content');
+  tabs.forEach(b => {
+    b.classList.toggle('active', b === btn);
+    b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+  });
+  panels.forEach(c => {
+    c.classList.toggle('active', c.id === 'tab-' + btn.dataset.tab);
+  });
+}
+
+function changeProductImg(thumb) {
+  document.querySelectorAll('.product-detail-thumb').forEach(t => t.classList.remove('active'));
+  thumb.classList.add('active');
+  document.getElementById('mainProductImg').src = thumb.dataset.src;
+}
+
+// ===== Global Event Delegation =====
+document.addEventListener('click', function(e) {
+  // Product card → detail
+  const card = e.target.closest('[data-product]');
+  if (card && !e.target.closest('a')) {
+    location.hash = '#/product/' + card.dataset.product;
+    return;
+  }
+  // Thumbnails
+  const thumb = e.target.closest('.product-detail-thumb');
+  if (thumb) {
+    changeProductImg(thumb);
+    return;
+  }
+  // Tabs
+  const tab = e.target.closest('.tab-btn');
+  if (tab) {
+    switchTab(tab);
+    return;
+  }
+  // Category filters
+  const filter = e.target.closest('.filter-tag');
+  if (filter) {
+    document.querySelectorAll('.filter-tag').forEach(t => {
+      t.classList.toggle('active', t === filter);
+      t.setAttribute('aria-pressed', t === filter ? 'true' : 'false');
+    });
+    renderProducts(filter.dataset.filter);
+  }
+});
+
+// Keyboard support for product cards
+document.addEventListener('keydown', function(e) {
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('[data-product]')) {
+    e.preventDefault();
+    location.hash = '#/product/' + e.target.dataset.product;
+  }
+});
+
+// ===== Mobile Nav =====
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', function() {
+  const isOpen = navLinks.classList.toggle('open');
+  this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
+function closeMobileNav() {
+  navLinks.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false');
+}
+
+// ===== Contact Form =====
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  if (!this.checkValidity()) {
+    this.reportValidity();
+    return;
+  }
+  const btn = document.getElementById('formSubmitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  this.style.display = 'none';
+  document.getElementById('formSuccess').classList.add('show');
+});
+
+// ===== Back to Top (rAF-throttled) =====
+const backTop = document.getElementById('backTop');
+let scrollTicking = false;
+window.addEventListener('scroll', function() {
+  if (!scrollTicking) {
+    window.requestAnimationFrame(function() {
+      backTop.classList.toggle('show', window.scrollY > 400);
+      scrollTicking = false;
+    });
+    scrollTicking = true;
+  }
+}, { passive: true });
+backTop.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ===== Init =====
+window.addEventListener('hashchange', router);
+renderHomeProducts();
+router();
+</script>
 </body>
 </html>
