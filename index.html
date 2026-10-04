@@ -90,97 +90,83 @@ ul { list-style: none; }
 
 /* ===== Navigation ===== */
 .nav {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: rgba(27, 58, 92, 0.97);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(198, 134, 66, 0.3);
+  z-index: 999;
+  background: var(--indigo-dark);
 }
 .nav-inner {
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  padding: 1rem 2rem;
 }
 .nav-logo {
-  font-family: var(--font-display);
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--white);
-  letter-spacing: 2px;
-  text-transform: uppercase;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.6rem;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.8rem;
 }
 .nav-logo-mark {
-  width: 66px;
-  height: 36px;
   border: 2px solid var(--copper);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
+  padding: 0.3rem 0.6rem;
   color: var(--copper);
 }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 2rem;
 }
 .nav-link {
-  font-family: var(--font-display);
-  font-size: 14px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.8);
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  transition: color 0.2s;
-  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
 }
-.nav-link:hover, .nav-link.active { color: var(--copper-light); }
-.nav-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--copper);
+.nav-link[aria-current="page"] {
+  border-bottom: 2px solid var(--copper);
 }
 .nav-cta {
-  font-family: var(--font-display);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--white);
   background: var(--copper);
-  padding: 10px 22px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: background 0.2s;
+  color: white;
+  padding: 0.7rem 1.4rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
 }
-.nav-cta:hover { background: var(--copper-light); }
+/* 汉堡按钮：大屏默认隐藏 */
 .nav-toggle {
   display: none;
-  flex-direction: column;
-  gap: 5px;
-  padding: 8px;
+  background: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  cursor: pointer;
 }
 .nav-toggle span {
-  width: 24px;
-  height: 2px;
-  background: var(--white);
-  transition: 0.3s;
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 99px;
+  position: absolute;
+  left: 0;
+  transition: 0.25s ease;
 }
+.nav-toggle span:nth-child(1) { top: 6px; }
+.nav-toggle span:nth-child(2) { top: 14px; }
+.nav-toggle span:nth-child(3) { bottom: 6px; }
 
-/* ===== Mobile Nav ===== */
-@media (max-width: 900px) {
+/* ===== 移动端 900px 断点 ===== */
+@media (max-width:900px) {
+  .nav-inner {
+    padding: 1rem;
+  }
   .nav-links {
     position: fixed;
     top: 72px;
@@ -188,36 +174,56 @@ ul { list-style: none; }
     right: 0;
     background: var(--indigo-dark);
     flex-direction: column;
+    align-items: center;
     padding: 24px;
     gap: 20px;
     transform: translateY(-120%);
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
     border-bottom: 2px solid var(--copper);
+    box-sizing: border-box;
+    z-index: 99;
+    max-height: calc(100vh - 72px);
+    overflow-y: auto;
+    /* 去掉display:none，用transform控制显隐，实现动画 */
+    display: flex;
   }
-  .nav-links.open { transform: translateY(0); }
-  .nav-toggle { display: flex; }
-  .nav-cta { display: none; }
+  /* JS切换 .open 类！！！和JS保持一致 */
+  .nav-links.open {
+    transform: translateY(0);
+  }
+  .nav-toggle {
+    display: flex;
+  }
+  /* 移动端隐藏Get A Quote按钮（可选，你可以删掉这行保留） */
+  .nav-cta {
+    /* display: none; */
+  }
 }
 
+/* ===== 768px 更小屏幕断点 ===== */
+@media screen and (max-width:768px){
+  .abs-box{
+    position:relative;
+    left:auto;
+    top:auto;
+  }
+  .banner{
+    background-image: url("/y/bg9.avif");
+    height: 320px;
+  }
+}
+
+/* PC banner */
+.banner {
+  background: url("/y/bg9.avif") no-repeat center;
+  background-size: cover;
+  height: 500px;
+}
 /* ===== Page Container ===== */
 .page { display: none; min-height: 100vh; padding-top: 72px; }
 .page.active { display: block; }
 
 /* ===== Hero Section ===== */
-.hero {
-  position: relative;
-  min-height: calc(100vh - 72px);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('/y/bg6.avif');
-  background-size: cover;
-  background-position: center;
-}
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -349,9 +355,46 @@ ul { list-style: none; }
   text-transform: uppercase;
   margin-top: 6px;
 }
-@media (max-width: 768px) {
-  .hero-stats-inner { grid-template-columns: repeat(2, 1fr); }
-  .hero-content { padding-top: 64px; padding-bottom: 64px; }
+@media (max-width:900px){
+  .hero-bg{
+    background-image: url('/y/bg6.avif');
+    background-position: center;
+  }
+}
+/* TEST: 放在style最后 */
+.hero {
+  position: relative;
+  min-height: calc(100svh - 72px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+@supports not (height:100svh){
+  .hero{
+    min-height: calc(100vh - 72px);
+  }
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/y/bg9.avif');
+  background-size: cover;
+  background-position: center;
+}
+@media (max-width:900px){
+  .hero-bg{
+    background-position: center top;
+    background-image: url('/y/bg6.avif');
+  }
+}
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.35);
+}
+.hero-content{
+  position:relative;
+  z-index:2;
 }
 
 /* ===== Section Common ===== */
@@ -1878,7 +1921,7 @@ ul { list-style: none; }
         <a href="https://www.facebook.com/yixianclothing/" aria-label="Facebook">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
         </a>
-        <!-- <a href="https://www.linkedin.com/compan/y/hoodieoem/" aria-label="LinkedIn">
+        <!-- <a href="https://www.linkedin.com/compan/y/dgyixian/" aria-label="LinkedIn">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         </a> -->
         <a href="https://wa.me/8613925571400" target="_blank" rel="noopener" aria-label="WhatsApp">
@@ -1958,7 +2001,7 @@ const products = [
     desc: 'Our signature heavyweight hoodie in 420GSM loopback terry fleece. Oversized drop-shoulder fit, double-layer hood, kangaroo pocket and ribbed cuffs. A clean canvas for screen print, embroidery and custom branding.',
     specs: {
       fabric: '100% Cotton Terry Fleece',
-      weight: '240~420 GSM',
+      weight: '420 GSM',
       moq: '100 pieces per style',
       leadTime: '20-25 days',
       wash: 'Garment dyed / Enzyme',
@@ -1980,7 +2023,7 @@ const products = [
     desc: 'Oversized boxy-fit tee in heavy 240GSM cotton jersey. Front graphic printing available in screen print, DTG or puff ink. Pre-shrunk fabric, taped shoulder seams and reinforced neck ribbing.',
     specs: {
       fabric: '100% Cotton Jersey',
-      weight: '200~300 GSM',
+      weight: '220 GSM',
       moq: '100 pieces per style',
       leadTime: '20-25 days',
       print: 'Screen / DTG / Puff Ink',
@@ -2002,7 +2045,7 @@ const products = [
     desc: 'Classic trucker silhouette in mottled acid wash. Bleach-treated 300gsm 100% Cotton gives every piece a one-of-a-kind finish. Pointed collar, chest flap pockets, adjustable waist tabs and branded copper hardware.',
     specs: {
       fabric: '100% Cotton',
-      weight: '180~360 GSM',
+      weight: '300 GSM',
       moq: '100 pieces per style',
       leadTime: '25-30 days',
       wash: 'Acid / Stone / Bleach',
@@ -2024,7 +2067,7 @@ const products = [
     desc: 'Streetwear statement sweatpants with hand-applied rhinestone studs along the seams and pockets. Slim stretch fit with 5-pocket styling, YKK zip and reinforced stress points. Multiple wash and stone options.',
     specs: {
       fabric: '98% Cotton 2% Spandex',
-      weight: '240~420 GSM',
+      weight: '300 GSM',
       moq: '100 pieces per style',
       leadTime: '25-30 days',
       details: 'Rhinestone / Studs / Patch',
@@ -2046,7 +2089,7 @@ const products = [
     desc: 'Utility cargo pants with six-pocket layout, drawstring waist and tapered leg. Made from durable ripstop twill with bartack reinforcement. Custom pocket styles, embroidery and reflective detailing available.',
     specs: {
       fabric: '100% Cotton Ripstop Twill',
-      weight: '220~320 GSM / 9.4 oz',
+      weight: '320 GSM / 9.4 oz',
       moq: '100 pieces per style',
       leadTime: '25-30 days',
       details: '6-Pocket Utility / Drawstring',
@@ -2060,7 +2103,7 @@ const products = [
     categoryLabel: 'Vest',
     badge: '',
     image: '/y/tanktop2.avif',
-    images: ['/y/tanktop3.avif', '/y/tanktop6.avif', '/y/tanktop5.avif', '/y/tanktop1.avif'],
+    images: ['/y/tanktop3.avif', '/y/tanktop6.avif', '/y/tanktop1.avif', '/y/tanktop1.avif'],
     moq: '100 pcs',
     leadTime: '20-25 days',
     fabric: '100% Cotton ',
@@ -2068,7 +2111,7 @@ const products = [
     desc: 'Classic vest with pointed collar and button-front closure. Perfect for streetwear layering, biker and festival looks. Custom patches, embroidery, rhinestone and distressing available.',
     specs: {
       fabric: '100% Cotton ',
-      weight: '220~300 GSM',
+      weight: '220 GSM',
       moq: '100 pieces per style',
       leadTime: '15-20 days',
       wash: 'Raw / Stone / Acid / Distressed',
@@ -2352,6 +2395,9 @@ function closeMobileNav() {
   navLinks.classList.remove('open');
   navToggle.setAttribute('aria-expanded', 'false');
 }
+document.querySelectorAll('#navLinks .nav-link, #navLinks .nav-cta').forEach(link => {
+  link.addEventListener('click', closeMobileNav);
+});
 
 // ===== Contact Form =====
 document.getElementById('contactForm').addEventListener('submit', function(e) {
@@ -2387,6 +2433,7 @@ backTop.addEventListener('click', function() {
 window.addEventListener('hashchange', router);
 renderHomeProducts();
 router();
+
 </script>
 </body>
 </html>
