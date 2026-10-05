@@ -2636,6 +2636,16 @@ backTop.addEventListener('click', function() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
+// ===== 返回产品页按钮：已在产品页时也回到顶部 =====
+document.querySelectorAll('.home-float').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    // 目标路由与当前一致（已在产品页内部）时，强制平滑滚回顶部
+    if (location.hash === this.getAttribute('href')) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+});
+
 // ===== Init =====
 window.addEventListener('hashchange', router);
 renderHomeProducts();
