@@ -1921,7 +1921,7 @@ ul { list-style: none; }
         </div>
         <div class="contact-item-content">
           <h4>Email</h4>
-          <p><a href="mailto:mrliu@yixianfushi.cn">mrliu@yixianfushi.cn</a><br>Quotes within 24 hours</p>
+          <p><a href="mailto:sales@dgyixian.com">sales@dgyixian.com</a><br>Quotes within 24 hours</p>
         </div>
       </div>
     </div>
@@ -2050,7 +2050,7 @@ ul { list-style: none; }
       </div>
       <div class="footer-contact-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <span><a href="mailto:mrliu@yixianfushi.cn">mrliu@yixianfushi.cn</a> </span>
+        <span><a href="mailto:sales@dgyixian.com">sales@dgyixian.com</a> </span>
       </div>
     </div>
   </div>
@@ -2287,9 +2287,13 @@ function router() {
     document.title = pageTitles.home;
   }
 
-  // 路由切换：瞬时回到顶部（html 全局 scroll-behavior:smooth 会把它变平滑，这里强制瞬时，避免跳转后停在页面中部）
-  document.documentElement.scrollTop = 0;
-  document.body.scrollTop = 0;
+  // 路由切换：强制瞬时回到顶部（html 全局 scroll-behavior:smooth 会让 scrollTop 赋值也变平滑，
+  // 这里临时关闭 smooth 再滚动，确保跳转后立即停在页面顶部，避免需二次点击）
+  var scroller = document.scrollingElement || document.documentElement;
+  var prevBehavior = scroller.style.scrollBehavior;
+  scroller.style.scrollBehavior = 'auto';
+  window.scrollTo(0, 0);
+  scroller.style.scrollBehavior = prevBehavior;
   closeMobileNav();
 }
 
@@ -2583,7 +2587,7 @@ const EMAILJS_SERVICE_ID = 'service_2bl0xto';
 const EMAILJS_TEMPLATE_ID = 'template_859dlcw';
 const EMAILJS_PUBLIC_KEY = 'VTn2thJ62d9hBXbBS';
 // 发送失败时展示给访客的兜底邮箱（改成你自己的）
-const FALLBACK_EMAIL = 'mrliu@yixianfushi.cn';
+const FALLBACK_EMAIL = 'sales@dgyixian.com';
 
 emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
@@ -2641,10 +2645,14 @@ backTop.addEventListener('click', function() {
 // ===== 返回产品页按钮：已在产品页时也回到顶部 =====
 document.querySelectorAll('.home-float').forEach(function(btn) {
   btn.addEventListener('click', function(e) {
-    // 目标路由与当前一致（已在产品页内部）时，阻止默认并平滑滚回顶部
+    // 目标路由与当前一致（已在产品页内部）时，阻止默认并强制瞬时回顶
     if (location.hash === this.getAttribute('href')) {
       e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      var sc = document.scrollingElement || document.documentElement;
+      var prev = sc.style.scrollBehavior;
+      sc.style.scrollBehavior = 'auto';
+      window.scrollTo(0, 0);
+      sc.style.scrollBehavior = prev;
     }
     // 不同页：让链接正常跳转，router 会瞬时回顶
   });
