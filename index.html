@@ -208,14 +208,14 @@ ul { list-style: none; }
     top:auto;
   }
   .banner{
-    background-image: url("/y/bg9.avif");
+    background-image: url("/y/bg8.avif");
     height: 320px;
   }
 }
 
 /* PC banner */
 .banner {
-  background: url("/y/bg9.avif") no-repeat center;
+  background: url("/y/bg8.avif") no-repeat center;
   background-size: cover;
   height: 500px;
 }
@@ -384,7 +384,7 @@ ul { list-style: none; }
 @media (max-width:900px){
   .hero-bg{
     background-position: center top;
-    background-image: url('/y/bg9.avif');
+    background-image: url('/y/bg8.avif');
   }
 }
 .hero-overlay{
@@ -1840,7 +1840,7 @@ ul { list-style: none; }
     <div class="contact-form-wrap">
       <h3>Request A Quote</h3>
       <p>Fill in the form below and our sales team will get back to you within 24 hours.</p>
-      <form id="contactForm" novalidate action="/api/inquiry" method="post">
+      <form id="contactForm" novalidate>
         <div class="form-row">
           <div class="form-group">
             <label for="f-name">Your Name <span>*</span></label>
@@ -1879,10 +1879,9 @@ ul { list-style: none; }
             <label for="f-quantity">Estimated Quantity</label>
             <select id="f-quantity" name="quantity">
               <option value="">Select quantity</option>
-              <option>300 - 500 pcs</option>
+              <option>100 - 200 pcs</option>
+              <option>200 - 500 pcs</option>
               <option>500 - 1,000 pcs</option>
-              <option>1,000 - 5,000 pcs</option>
-              <option>5,000+ pcs</option>
             </select>
           </div>
         </div>
@@ -1981,6 +1980,8 @@ ul { list-style: none; }
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
+<!-- EmailJS SDK（表单发信用） -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
 'use strict';
 
@@ -2399,8 +2400,20 @@ document.querySelectorAll('#navLinks .nav-link, #navLinks .nav-cta').forEach(lin
   link.addEventListener('click', closeMobileNav);
 });
 
-// ===== Contact Form =====
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+// ===== Contact Form (EmailJS) =====
+// TODO: 在下方填入你自己的 EmailJS 三项凭证（登录 https://dashboard.emailjs.com 获取）
+// 1) Service ID：Email Services 页创建后生成，形如 service_xxxxxxx
+// 2) Template ID：Email Templates 页创建后生成，形如 template_xxxxxxx
+// 3) Public Key：Account > General 页，形如一串 36 位字符（不是 Private Key）
+const EMAILJS_SERVICE_ID = 'service_2bl0xto';
+const EMAILJS_TEMPLATE_ID = 'template_859dlcw';
+const EMAILJS_PUBLIC_KEY = 'VTn2thJ62d9hBXbBS';
+// 发送失败时展示给访客的兜底邮箱（改成你自己的）
+const FALLBACK_EMAIL = 'mrliu@yixianfushi.cn';
+
+emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   if (!this.checkValidity()) {
     this.reportValidity();
@@ -2409,8 +2422,30 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   const btn = document.getElementById('formSubmitBtn');
   btn.disabled = true;
   btn.textContent = 'Sending...';
-  this.style.display = 'none';
-  document.getElementById('formSuccess').classList.add('show');
+
+  // 收集字段，字段名与 EmailJS 模板里的 {{name}}/{{email}}/... 对应
+  const params = {
+    name: document.getElementById('f-name').value,
+    company: document.getElementById('f-company').value,
+    email: document.getElementById('f-email').value,
+    whatsapp: document.getElementById('f-whatsapp').value,
+    category: document.getElementById('f-category').value,
+    quantity: document.getElementById('f-quantity').value,
+    message: document.getElementById('f-message').value
+  };
+
+  try {
+    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params);
+    // 发送成功：隐藏表单，显示成功提示
+    this.style.display = 'none';
+    document.getElementById('formSuccess').classList.add('show');
+  } catch (err) {
+    console.error('EmailJS send failed:', err);
+    // 发送失败：恢复按钮，提示用户改走邮箱
+    btn.disabled = false;
+    btn.textContent = 'Send Inquiry';
+    alert('Sorry, sending failed. Please try again, or email us directly at ' + FALLBACK_EMAIL);
+  }
 });
 
 // ===== Back to Top (rAF-throttled) =====
