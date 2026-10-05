@@ -2287,7 +2287,9 @@ function router() {
     document.title = pageTitles.home;
   }
 
-  window.scrollTo(0, 0);
+  // 路由切换：瞬时回到顶部（html 全局 scroll-behavior:smooth 会把它变平滑，这里强制瞬时，避免跳转后停在页面中部）
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
   closeMobileNav();
 }
 
@@ -2638,11 +2640,13 @@ backTop.addEventListener('click', function() {
 
 // ===== 返回产品页按钮：已在产品页时也回到顶部 =====
 document.querySelectorAll('.home-float').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    // 目标路由与当前一致（已在产品页内部）时，强制平滑滚回顶部
+  btn.addEventListener('click', function(e) {
+    // 目标路由与当前一致（已在产品页内部）时，阻止默认并平滑滚回顶部
     if (location.hash === this.getAttribute('href')) {
+      e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+    // 不同页：让链接正常跳转，router 会瞬时回顶
   });
 });
 
