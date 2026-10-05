@@ -110,11 +110,12 @@ ul { list-style: none; }
   color: white;
   font-weight: 700;
   text-decoration: none;
-  font-size: 1.8rem;
+  font-size: clamp(0.85rem, 4vw, 1.8rem);
+  white-space: nowrap;
 }
 .nav-logo-mark {
-  width: 46px;
-  height: 46px;
+  width: clamp(30px, 4.5vw, 46px);
+  height: clamp(30px, 4.5vw, 46px);
   flex-shrink: 0;
 }
 .nav-logo-mark svg {
