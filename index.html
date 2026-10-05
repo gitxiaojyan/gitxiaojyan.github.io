@@ -113,9 +113,14 @@ ul { list-style: none; }
   font-size: 1.8rem;
 }
 .nav-logo-mark {
-  border: 2px solid var(--copper);
-  padding: 0.3rem 0.6rem;
-  color: var(--copper);
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+}
+.nav-logo-mark svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 .nav-links {
   display: flex;
@@ -208,14 +213,14 @@ ul { list-style: none; }
     top:auto;
   }
   .banner{
-    background-image: url("/y/bg10.avif");
+    background-image: url("/y/bg8.avif");
     height: 320px;
   }
 }
 
 /* PC banner */
 .banner {
-  background: url("/y/bg10.avif") no-repeat center;
+  background: url("/y/bg8.avif") no-repeat center;
   background-size: cover;
   height: 500px;
 }
@@ -384,7 +389,7 @@ ul { list-style: none; }
 @media (max-width:900px){
   .hero-bg{
     background-position: center top;
-    background-image: url('/y/bg10.avif');
+    background-image: url('/y/bg8.avif');
   }
 }
 .hero-overlay{
@@ -489,6 +494,9 @@ ul { list-style: none; }
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .product-card:hover,
 .product-card:focus-visible {
@@ -508,6 +516,36 @@ ul { list-style: none; }
   transition: transform 0.5s;
 }
 .product-card:hover .product-card-img img { transform: scale(1.05); }
+/* 悬停提示：鼠标停留时在产品图上显示提示文字 */
+.product-card-img::after {
+  content: 'Click to enter and view more styles';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  background: rgba(18, 40, 64, 0.72);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.product-card:hover .product-card-img::after,
+.product-card:focus-visible .product-card-img::after {
+  opacity: 1;
+}
+/* 产品列表页 / 二级类目页：悬停提示改为产品详情文案（主页保持原样） */
+#productsFullGrid .product-card-img::after,
+#categoryGrid .product-card-img::after {
+  content: 'Click to learn about product details';
+}
 .product-card-badge {
   position: absolute;
   top: 16px;
@@ -523,6 +561,9 @@ ul { list-style: none; }
 }
 .product-card-body {
   padding: 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 .product-card-category {
   font-family: var(--font-display);
@@ -547,6 +588,7 @@ ul { list-style: none; }
   gap: 20px;
   font-size: 13px;
   color: var(--gray);
+  margin-top: auto;
 }
 .product-card-meta span {
   display: flex;
@@ -826,7 +868,7 @@ ul { list-style: none; }
 }
 .product-detail-main-img {
   width: 100%;
-  height: 520px;
+  aspect-ratio: 389 / 320;
   background: var(--indigo);
   overflow: hidden;
   border: 1px solid var(--gray-light);
@@ -1014,7 +1056,6 @@ ul { list-style: none; }
 
 @media (max-width: 900px) {
   .product-detail-top { grid-template-columns: 1fr; gap: 40px; }
-  .product-detail-main-img { height: 380px; }
 }
 @media (max-width: 600px) {
   .product-detail-thumb { height: 72px; }
@@ -1424,6 +1465,29 @@ ul { list-style: none; }
 }
 .whatsapp-float svg { width: 28px; height: 28px; }
 
+/* ===== Home Float (返回产品主页) ===== */
+.home-float {
+  position: fixed;
+  bottom: 28px;
+  right: 96px;
+  z-index: 999;
+  width: 56px;
+  height: 56px;
+  background: var(--indigo);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--copper-light);
+  box-shadow: 0 4px 20px rgba(27, 58, 92, 0.3);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.home-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(27, 58, 92, 0.45);
+}
+.home-float svg { width: 26px; height: 26px; }
+
 /* ===== Back to Top ===== */
 .back-top {
   position: fixed;
@@ -1461,9 +1525,9 @@ ul { list-style: none; }
 <!-- ===== Navigation ===== -->
 <header class="nav">
   <nav class="nav-inner" aria-label="Main navigation">
-    <a href="#/" class="nav-logo" data-nav="home" aria-label="STREETWEAR OEM home">
-      <span class="nav-logo-mark" aria-hidden="true">YIXIAN</span>
-      STREETWEAR OEM
+    <a href="#/" class="nav-logo" data-nav="home" aria-label="YIXIAN STREETWEAR OEM home">
+      <svg class="nav-logo-mark" viewBox="0 0 566.93 566.93" aria-hidden="true"><defs><style>.cls-1{fill:#fff;}</style></defs><path d="M538.81,283.74c.18,140-114.48,254.82-254.39,254.87-141.91.06-256.18-113.71-256.3-255.17C28,143.26,142.5,28.32,282.3,28.31,424.43,28.31,538.63,142,538.81,283.74ZM136.25,461.48h0c4.61,0,9.26-.34,13.84.08,5.59.52,9-1.78,11.91-6.4Q207.41,384,253.08,313q35.14-54.84,70.19-109.73,27.33-42.72,54.64-85.46c4.51-7.09,1.72-12.21-6.7-12.35-7.36-.13-14.73,0-22.09-.13-4.19-.09-7,1.73-9.3,5.12q-24.09,35.67-48.32,71.26-17.67,26-35.42,52c-5,7.27-8.21,7.25-13.07,0q-19.65-29.42-39.15-58.92C190,153.87,176,133,162.38,112c-3.14-4.85-6.75-7.17-12.56-6.73-5.22.4-10.48,0-15.72.14-8,.17-10.84,5.29-6.66,12.26q26,43.33,52,86.63c14.84,24.7,29.61,49.44,44.56,74.08,2.38,3.93,2.67,7.21-.21,10.94s-5.55,8-8.31,12Q185,345.73,154.4,390.12q-20.39,29.6-40.77,59.19c-1.84,2.67-3.1,5.48-1.24,8.7,1.74,3,4.63,3.48,7.75,3.47Zm266.14,0h17.22c.25,0,.5,0,.75,0,6.36-.48,9.11-5.8,5.73-11.16-1.27-2-2.64-3.94-4-5.89L332,312.88c-3.17-4.63-3.09-6.14,0-10.83q9.32-14,18.58-28.09,36.23-55,72.41-110.06,15-22.82,30-45.65c1.93-2.94,3.26-5.92,1.43-9.43s-4.95-3.38-8.11-3.4c-7.36,0-14.73.15-22.08-.11-4.79-.16-7.88,1.75-10.46,5.73q-39.58,61.1-79.37,122.05-37.57,57.72-75.17,115.42-32.55,50.06-65,100.14c-1.91,2.94-3.44,6-1.57,9.41s5.18,3.47,8.5,3.45c6.87-.05,13.74-.25,20.59,0,4.54.16,7.4-1.63,9.8-5.4q26.66-41.82,53.54-83.49c3.78-5.88,7.48-11.8,11.32-17.64s7.5-5.77,11.7-.26c1,1.29,1.9,2.63,2.81,4q33.3,49.1,66.56,98.21a9.56,9.56,0,0,0,8.79,4.6C391.65,461.39,397,461.47,402.39,461.48Z"/><path class="cls-1" d="M136.25,461.48H120.14c-3.12,0-6-.46-7.75-3.47-1.86-3.22-.6-6,1.24-8.7Q134,419.7,154.4,390.12q30.57-44.4,61.12-88.81c2.76-4,5.35-8.14,8.31-12s2.59-7,.21-10.94c-14.95-24.64-29.72-49.38-44.56-74.08q-26-43.32-52-86.63c-4.18-7-1.39-12.09,6.66-12.26,5.24-.1,10.5.26,15.72-.14,5.81-.44,9.42,1.88,12.56,6.73C176,133,190,153.87,203.86,174.76Q223.4,204.24,243,233.68c4.86,7.27,8.07,7.29,13.07,0q17.79-25.92,35.42-52,24.19-35.61,48.32-71.26c2.29-3.39,5.11-5.21,9.3-5.12,7.36.16,14.73,0,22.09.13,8.42.14,11.21,5.26,6.7,12.35q-27.27,42.76-54.64,85.46Q288.19,258.17,253.08,313,207.54,384.09,162,455.15c-2.95,4.62-6.32,6.92-11.91,6.4-4.58-.42-9.23-.08-13.84-.08Z"/><path class="cls-1" d="M402.39,461.47c-5.37,0-10.74-.08-16.1,0a9.56,9.56,0,0,1-8.79-4.6q-33.22-49.14-66.56-98.21c-.91-1.34-1.83-2.68-2.81-4-4.2-5.51-7.95-5.46-11.7.26s-7.54,11.76-11.32,17.64q-26.79,41.73-53.54,83.49c-2.4,3.77-5.26,5.56-9.8,5.4-6.85-.25-13.72-.05-20.59,0-3.32,0-6.66-.07-8.5-3.45s-.34-6.47,1.57-9.41q32.52-50.06,65-100.14,37.55-57.74,75.17-115.42,39.72-61,79.37-122c2.58-4,5.67-5.89,10.46-5.73,7.35.26,14.72.08,22.08.11,3.16,0,6.33,0,8.11,3.4s.5,6.49-1.43,9.43q-15,22.82-30,45.65-36.19,55-72.41,110.06Q341.34,288,332,302.05c-3.12,4.69-3.2,6.2,0,10.83L422.11,444.4c1.34,2,2.71,3.89,4,5.89,3.38,5.36.63,10.68-5.73,11.16-.25,0-.5,0-.75,0Z"/></svg>
+      YIXIAN STREETWEAR OEM
     </a>
     <div class="nav-links" id="navLinks">
       <a href="#/" class="nav-link" data-nav="home" aria-current="page">Home</a>
@@ -1678,10 +1742,34 @@ ul { list-style: none; }
       <button class="filter-tag" data-filter="jacket" aria-pressed="false">Jackets</button>
       <button class="filter-tag" data-filter="Sweatpants" aria-pressed="false">Sweatpants</button>
       <button class="filter-tag" data-filter="pants" aria-pressed="false">Cargo Pants</button>
-      <button class="filter-tag" data-filter="vest" aria-pressed="false">Vests</button>
+      <button class="filter-tag" data-filter="vest" aria-pressed="false">Tank Tops</button>
     </div>
   </div>
   <div class="products-full-grid" id="productsFullGrid"></div>
+</div>
+
+<!-- ===== CATEGORY PAGE (二级类目) ===== -->
+<div class="page" id="page-category">
+  <div class="page-header">
+    <div class="page-header-content">
+      <h1 class="page-header-title" id="categoryTitle">Category</h1>
+      <div class="page-header-breadcrumb">
+        <a href="#/">Home</a><span>/</span><a href="#/products">Products</a><span>/</span><span id="categoryBreadcrumb">All</span>
+      </div>
+    </div>
+  </div>
+  <div class="filter-bar">
+    <div class="filter-bar-inner" role="group" aria-label="Filter products by category">
+      <button class="filter-tag active" data-filter="all" aria-pressed="true">All Products</button>
+      <button class="filter-tag" data-filter="hoodie" aria-pressed="false">Hoodies</button>
+      <button class="filter-tag" data-filter="tee" aria-pressed="false">Tees</button>
+      <button class="filter-tag" data-filter="jacket" aria-pressed="false">Jackets</button>
+      <button class="filter-tag" data-filter="Sweatpants" aria-pressed="false">Sweatpants</button>
+      <button class="filter-tag" data-filter="pants" aria-pressed="false">Cargo Pants</button>
+      <button class="filter-tag" data-filter="vest" aria-pressed="false">Tank Tops</button>
+    </div>
+  </div>
+  <div class="products-full-grid" id="categoryGrid"></div>
 </div>
 
 <!-- ===== PRODUCT DETAIL PAGE ===== -->
@@ -1871,7 +1959,7 @@ ul { list-style: none; }
               <option>Jacket</option>
               <option>Sweatpants</option>
               <option>Cargo Pants</option>
-              <option>Vest</option>
+              <option>Tank Top</option>
               <option>Other</option>
             </select>
           </div>
@@ -1908,9 +1996,9 @@ ul { list-style: none; }
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <a href="#/" class="nav-logo" aria-label="STREETWEAR OEM home">
-        <span class="nav-logo-mark" aria-hidden="true">YIXIAN</span>
-        STREETWEAR OEM
+      <a href="#/" class="nav-logo" aria-label="YIXIAN STREETWEAR OEM home">
+        <svg class="nav-logo-mark" viewBox="0 0 566.93 566.93" aria-hidden="true"><defs><style>.cls-1{fill:#fff;}</style></defs><path d="M538.81,283.74c.18,140-114.48,254.82-254.39,254.87-141.91.06-256.18-113.71-256.3-255.17C28,143.26,142.5,28.32,282.3,28.31,424.43,28.31,538.63,142,538.81,283.74ZM136.25,461.48h0c4.61,0,9.26-.34,13.84.08,5.59.52,9-1.78,11.91-6.4Q207.41,384,253.08,313q35.14-54.84,70.19-109.73,27.33-42.72,54.64-85.46c4.51-7.09,1.72-12.21-6.7-12.35-7.36-.13-14.73,0-22.09-.13-4.19-.09-7,1.73-9.3,5.12q-24.09,35.67-48.32,71.26-17.67,26-35.42,52c-5,7.27-8.21,7.25-13.07,0q-19.65-29.42-39.15-58.92C190,153.87,176,133,162.38,112c-3.14-4.85-6.75-7.17-12.56-6.73-5.22.4-10.48,0-15.72.14-8,.17-10.84,5.29-6.66,12.26q26,43.33,52,86.63c14.84,24.7,29.61,49.44,44.56,74.08,2.38,3.93,2.67,7.21-.21,10.94s-5.55,8-8.31,12Q185,345.73,154.4,390.12q-20.39,29.6-40.77,59.19c-1.84,2.67-3.1,5.48-1.24,8.7,1.74,3,4.63,3.48,7.75,3.47Zm266.14,0h17.22c.25,0,.5,0,.75,0,6.36-.48,9.11-5.8,5.73-11.16-1.27-2-2.64-3.94-4-5.89L332,312.88c-3.17-4.63-3.09-6.14,0-10.83q9.32-14,18.58-28.09,36.23-55,72.41-110.06,15-22.82,30-45.65c1.93-2.94,3.26-5.92,1.43-9.43s-4.95-3.38-8.11-3.4c-7.36,0-14.73.15-22.08-.11-4.79-.16-7.88,1.75-10.46,5.73q-39.58,61.1-79.37,122.05-37.57,57.72-75.17,115.42-32.55,50.06-65,100.14c-1.91,2.94-3.44,6-1.57,9.41s5.18,3.47,8.5,3.45c6.87-.05,13.74-.25,20.59,0,4.54.16,7.4-1.63,9.8-5.4q26.66-41.82,53.54-83.49c3.78-5.88,7.48-11.8,11.32-17.64s7.5-5.77,11.7-.26c1,1.29,1.9,2.63,2.81,4q33.3,49.1,66.56,98.21a9.56,9.56,0,0,0,8.79,4.6C391.65,461.39,397,461.47,402.39,461.48Z"/><path class="cls-1" d="M136.25,461.48H120.14c-3.12,0-6-.46-7.75-3.47-1.86-3.22-.6-6,1.24-8.7Q134,419.7,154.4,390.12q30.57-44.4,61.12-88.81c2.76-4,5.35-8.14,8.31-12s2.59-7,.21-10.94c-14.95-24.64-29.72-49.38-44.56-74.08q-26-43.32-52-86.63c-4.18-7-1.39-12.09,6.66-12.26,5.24-.1,10.5.26,15.72-.14,5.81-.44,9.42,1.88,12.56,6.73C176,133,190,153.87,203.86,174.76Q223.4,204.24,243,233.68c4.86,7.27,8.07,7.29,13.07,0q17.79-25.92,35.42-52,24.19-35.61,48.32-71.26c2.29-3.39,5.11-5.21,9.3-5.12,7.36.16,14.73,0,22.09.13,8.42.14,11.21,5.26,6.7,12.35q-27.27,42.76-54.64,85.46Q288.19,258.17,253.08,313,207.54,384.09,162,455.15c-2.95,4.62-6.32,6.92-11.91,6.4-4.58-.42-9.23-.08-13.84-.08Z"/><path class="cls-1" d="M402.39,461.47c-5.37,0-10.74-.08-16.1,0a9.56,9.56,0,0,1-8.79-4.6q-33.22-49.14-66.56-98.21c-.91-1.34-1.83-2.68-2.81-4-4.2-5.51-7.95-5.46-11.7.26s-7.54,11.76-11.32,17.64q-26.79,41.73-53.54,83.49c-2.4,3.77-5.26,5.56-9.8,5.4-6.85-.25-13.72-.05-20.59,0-3.32,0-6.66-.07-8.5-3.45s-.34-6.47,1.57-9.41q32.52-50.06,65-100.14,37.55-57.74,75.17-115.42,39.72-61,79.37-122c2.58-4,5.67-5.89,10.46-5.73,7.35.26,14.72.08,22.08.11,3.16,0,6.33,0,8.11,3.4s.5,6.49-1.43,9.43q-15,22.82-30,45.65-36.19,55-72.41,110.06Q341.34,288,332,302.05c-3.12,4.69-3.2,6.2,0,10.83L422.11,444.4c1.34,2,2.71,3.89,4,5.89,3.38,5.36.63,10.68-5.73,11.16-.25,0-.5,0-.75,0Z"/></svg>
+        YIXIAN STREETWEAR OEM
       </a>
       <p>Custom men's and women's streetwear manufacturer based in Humen, Dongguan. OEM/ODM hoodies, tees and Jackets for global streetwear brands since 2008.</p>
       <div class="footer-social">
@@ -1936,7 +2024,7 @@ ul { list-style: none; }
         <li><a href="#/products">Jackets</a></li>
         <li><a href="#/products">Sweatpants &amp; Pants</a></li>
         <li><a href="#/products">Cargo Pants</a></li>
-        <li><a href="#/products">Vests</a></li>
+        <li><a href="#/products">Tank Tops</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1975,6 +2063,11 @@ ul { list-style: none; }
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
+<!-- ===== Home Float (返回产品主页) ===== -->
+<a href="#/products" class="home-float" aria-label="Back to products">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+</a>
+
 <!-- ===== Back to Top ===== -->
 <button class="back-top" id="backTop" type="button" aria-label="Back to top">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
@@ -1986,7 +2079,8 @@ ul { list-style: none; }
 'use strict';
 
 // ===== Product Data =====
-const products = [
+// baseProducts：每个款式的基础定义（数据源）
+const baseProducts = [
   {
     id: 'heavyweight-terry-hoodie',
     name: 'Heavyweight Terry Hoodie',
@@ -2099,9 +2193,9 @@ const products = [
   },
   {
     id: 'vest',
-    name: 'Vest',
+    name: 'Tank Top',
     category: 'vest',
-    categoryLabel: 'Vest',
+    categoryLabel: 'Tank Top',
     badge: '',
     image: '/y/tanktop2.avif',
     images: ['/y/tanktop3.avif', '/y/tanktop6.avif', '/y/tanktop1.avif', '/y/tanktop1.avif'],
@@ -2109,7 +2203,7 @@ const products = [
     leadTime: '20-25 days',
     fabric: '100% Cotton ',
     sku: 'DC-VT-001',
-    desc: 'Classic vest with pointed collar and button-front closure. Perfect for streetwear layering, biker and festival looks. Custom patches, embroidery, rhinestone and distressing available.',
+    desc: 'Classic tank top with pointed collar and button-front closure. Perfect for streetwear layering, biker and festival looks. Custom patches, embroidery, rhinestone and distressing available.',
     specs: {
       fabric: '100% Cotton ',
       weight: '220 GSM',
@@ -2121,8 +2215,32 @@ const products = [
   }
 ];
 
+// ===== 将每张产品图展开为独立产品 =====
+const products = [];
+baseProducts.forEach(function(p) {
+  // 去重：主图 + 缩略图
+  const imgs = [...new Set([p.image].concat(p.images))];
+  imgs.forEach(function(img, i) {
+    products.push({
+      id: p.id + '-' + (i + 1),
+      name: p.name + ' ' + (i + 1),
+      category: p.category,
+      categoryLabel: p.categoryLabel,
+      badge: i === 0 ? p.badge : '',
+      image: img,
+      images: [img],
+      moq: p.moq,
+      leadTime: p.leadTime,
+      fabric: p.fabric,
+      sku: p.sku + '-' + (i + 1),
+      desc: p.desc,
+      specs: p.specs
+    });
+  });
+});
+
 // ===== State =====
-const pages = ['home', 'products', 'product-detail', 'about', 'contact'];
+const pages = ['home', 'products', 'category', 'product-detail', 'about', 'contact'];
 const pageTitles = {
   home: 'Dongguan Yixian Clothing Factory — Custom Men\'s & Women\'s Streetwear | OEM/ODM',
   products: 'Our Products |Dongguan Yixian Clothing Factory',
@@ -2145,6 +2263,11 @@ function router() {
     setActiveNav('products');
     renderProducts('all');
     document.title = pageTitles.products;
+  } else if (route === 'category' && param) {
+    document.getElementById('page-category').classList.add('active');
+    setActiveNav('products');
+    setActiveFilter(param);
+    renderCategory(param);
   } else if (route === 'product' && param) {
     document.getElementById('page-product-detail').classList.add('active');
     setActiveNav('products');
@@ -2200,14 +2323,45 @@ function productCardHTML(p) {
 }
 
 function renderHomeProducts() {
-  document.getElementById('homeProductsGrid').innerHTML =
-    products.slice(0, 3).map(productCardHTML).join('');
+  // 主页 Featured 展示 3 个分类的代表产品：Hoodies / Jackets / Sweatpants
+  const homeCats = ['hoodie', 'jacket', 'sweatpants'];
+  const featured = homeCats
+    .map(c => products.find(p => String(p.category).toLowerCase() === c))
+    .filter(Boolean);
+  document.getElementById('homeProductsGrid').innerHTML = featured.map(productCardHTML).join('');
 }
 
 function renderProducts(filter) {
   const grid = document.getElementById('productsFullGrid');
   const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
   grid.innerHTML = filtered.map(productCardHTML).join('');
+}
+
+// ===== Category (二级类目) =====
+const categoryNames = {
+  all: 'All Products',
+  hoodie: 'Hoodies',
+  tee: 'Tees',
+  jacket: 'Jackets',
+  sweatpants: 'Sweatpants',
+  pants: 'Cargo Pants',
+  vest: 'Tank Tops'
+};
+function setActiveFilter(f) {
+  document.querySelectorAll('.filter-tag').forEach(t => {
+    const on = t.dataset.filter === f;
+    t.classList.toggle('active', on);
+    t.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+}
+function renderCategory(f) {
+  const key = String(f).toLowerCase();
+  const list = key === 'all' ? products : products.filter(p => String(p.category).toLowerCase() === key);
+  const title = categoryNames[key] || 'Products';
+  document.getElementById('categoryTitle').textContent = title;
+  document.getElementById('categoryBreadcrumb').textContent = title;
+  document.getElementById('categoryGrid').innerHTML = list.map(productCardHTML).join('');
+  document.title = title + ' | ' + SITE_NAME;
 }
 
 // ===== Product Detail =====
@@ -2348,10 +2502,16 @@ function changeProductImg(thumb) {
 
 // ===== Global Event Delegation =====
 document.addEventListener('click', function(e) {
-  // Product card → detail
+  // Product card → 主页卡片进二级类目，其余进详情
   const card = e.target.closest('[data-product]');
   if (card && !e.target.closest('a')) {
-    location.hash = '#/product/' + card.dataset.product;
+    const isHome = document.getElementById('homeProductsGrid').contains(card);
+    if (isHome) {
+      const p = products.find(x => x.id === card.dataset.product);
+      location.hash = '#/category/' + (p ? p.category : 'hoodie');
+    } else {
+      location.hash = '#/product/' + card.dataset.product;
+    }
     return;
   }
   // Thumbnails
@@ -2366,14 +2526,18 @@ document.addEventListener('click', function(e) {
     switchTab(tab);
     return;
   }
-  // Category filters
+  // Category filters → 进入二级类目页
   const filter = e.target.closest('.filter-tag');
   if (filter) {
-    document.querySelectorAll('.filter-tag').forEach(t => {
-      t.classList.toggle('active', t === filter);
-      t.setAttribute('aria-pressed', t === filter ? 'true' : 'false');
-    });
-    renderProducts(filter.dataset.filter);
+    const f = filter.dataset.filter;
+    const target = '#/category/' + f;
+    if (window.location.hash === target) {
+      // 已在该类目页，手动刷新选中态与内容
+      setActiveFilter(f);
+      renderCategory(f);
+    } else {
+      location.hash = target;
+    }
   }
 });
 
@@ -2381,7 +2545,14 @@ document.addEventListener('click', function(e) {
 document.addEventListener('keydown', function(e) {
   if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('[data-product]')) {
     e.preventDefault();
-    location.hash = '#/product/' + e.target.dataset.product;
+    const el = e.target;
+    const isHome = document.getElementById('homeProductsGrid').contains(el);
+    if (isHome) {
+      const p = products.find(x => x.id === el.dataset.product);
+      location.hash = '#/category/' + (p ? p.category : 'hoodie');
+    } else {
+      location.hash = '#/product/' + el.dataset.product;
+    }
   }
 });
 
