@@ -1,0 +1,11 @@
+# robots.txt
+# 将 https://www.example.com 替换为你的真实域名
+
+User-agent: *
+Allow: /
+
+# 阻止搜索引擎索引 EmailJS / 外部静态资源目录（如确需，可去掉）
+Disallow: /y/
+
+# 站点地图
+Sitemap: https://www.example.com/sitemap.xml
