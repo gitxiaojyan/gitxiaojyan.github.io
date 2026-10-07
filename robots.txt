@@ -1,5 +1,4 @@
 # robots.txt
-# 将 https://www.example.com 替换为你的真实域名
 
 User-agent: *
 Allow: /
@@ -8,4 +7,4 @@ Allow: /
 Disallow: /y/
 
 # 站点地图
-Sitemap: https://www.dgyixian.com/sitemap.xml
+Sitemap: https://dgyixian.com/sitemap.xml
