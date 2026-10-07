@@ -1,109 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  站点域名占位：请将下面所有 https://www.example.com 替换为你的真实域名，
+  站点域名占位：请将下面所有 https://www.dgyixian.com 替换为你的真实域名，
   例如 https://www.dgyixian.com
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- 主页 -->
   <url>
-    <loc>https://www.example.com/</loc>
+    <loc>https://www.dgyixian.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- 产品列表页 -->
   <url>
-    <loc>https://www.example.com/products</loc>
+    <loc>https://www.dgyixian.com/products</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- 关于我们 -->
   <url>
-    <loc>https://www.example.com/about</loc>
+    <loc>https://www.dgyixian.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- 联系我们 -->
   <url>
-    <loc>https://www.example.com/contact</loc>
+    <loc>https://www.dgyixian.com/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- 二级类目页 -->
   <url>
-    <loc>https://www.example.com/category/hoodie</loc>
+    <loc>https://www.dgyixian.com/category/hoodie</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.example.com/category/tee</loc>
+    <loc>https://www.dgyixian.com/category/tee</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.example.com/category/jacket</loc>
+    <loc>https://www.dgyixian.com/category/jacket</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.example.com/category/Sweatpants</loc>
+    <loc>https://www.dgyixian.com/category/Sweatpants</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.example.com/category/pants</loc>
+    <loc>https://www.dgyixian.com/category/pants</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.example.com/category/vest</loc>
+    <loc>https://www.dgyixian.com/category/vest</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- 产品详情页（Hoodies） -->
-  <url><loc>https://www.example.com/product/heavyweight-terry-hoodie-1</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.example.com/product/heavyweight-terry-hoodie-2</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.example.com/product/heavyweight-terry-hoodie-3</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.example.com/product/heavyweight-terry-hoodie-4</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.example.com/product/heavyweight-terry-hoodie-5</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/heavyweight-terry-hoodie-1</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/heavyweight-terry-hoodie-2</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/heavyweight-terry-hoodie-3</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/heavyweight-terry-hoodie-4</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/heavyweight-terry-hoodie-5</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- 产品详情页（Tees） -->
-  <url><loc>https://www.example.com/product/oversized-graphic-tee-1</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.example.com/product/oversized-graphic-tee-2</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.example.com/product/oversized-graphic-tee-3</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.example.com/product/oversized-graphic-tee-4</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.example.com/product/oversized-graphic-tee-5</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/oversized-graphic-tee-1</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/oversized-graphic-tee-2</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/oversized-graphic-tee-3</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/oversized-graphic-tee-4</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/oversized-graphic-tee-5</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- 产品详情页（Jackets） -->
-  <url><loc>https://www.example.com/product/Baseball-jacket-1</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.example.com/product/Baseball-jacket-2</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.example.com/product/Baseball-jacket-3</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.example.com/product/Baseball-jacket-4</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.example.com/product/Baseball-jacket-5</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/Baseball-jacket-1</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/Baseball-jacket-2</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/Baseball-jacket-3</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/Baseball-jacket-4</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/Baseball-jacket-5</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- 产品详情页（Sweatpants） -->
-  <url><loc>https://www.example.com/product/Sweatpants-1</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.example.com/product/Sweatpants-2</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.example.com/product/Sweatpants-3</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.example.com/product/Sweatpants-4</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.example.com/product/Sweatpants-5</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/Sweatpants-1</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/Sweatpants-2</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/Sweatpants-3</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/Sweatpants-4</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/Sweatpants-5</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- 产品详情页（Cargo Pants） -->
-  <url><loc>https://www.example.com/product/cargo-pants-1</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.example.com/product/cargo-pants-2</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.example.com/product/cargo-pants-3</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.example.com/product/cargo-pants-4</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.example.com/product/cargo-pants-5</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/cargo-pants-1</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/cargo-pants-2</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/cargo-pants-3</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/cargo-pants-4</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/cargo-pants-5</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- 产品详情页（Vests / Tank Tops） -->
-  <url><loc>https://www.example.com/product/vest-1</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.example.com/product/vest-2</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.example.com/product/vest-3</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.example.com/product/vest-4</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/vest-1</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/vest-2</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/vest-3</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.dgyixian.com/product/vest-4</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
 </urlset>
