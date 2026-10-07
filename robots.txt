@@ -8,4 +8,4 @@ Allow: /
 Disallow: /y/
 
 # 站点地图
-Sitemap: https://www.example.com/sitemap.xml
+Sitemap: https://www.dgyixian.com/sitemap.xml
