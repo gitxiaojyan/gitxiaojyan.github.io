@@ -2201,7 +2201,7 @@ const baseProducts = [
     categoryLabel: 'Tank Top',
     badge: '',
     image: '/y/tanktop2.avif',
-    images: ['/y/tanktop3.avif', '/y/tanktop6.avif', '/y/tanktop1.avif', '/y/tanktop1.avif'],
+    images: ['/y/tanktop3.avif', '/y/tanktop6.avif', '/y/tanktop1.avif', '/y/tanktop5.avif', '/y/tanktop7.avif', '/y/tanktop8.avif', '/y/tanktop9.avif'],
     moq: '100 pcs',
     leadTime: '20-25 days',
     fabric: '100% Cotton ',
@@ -2239,6 +2239,37 @@ baseProducts.forEach(function(p) {
       desc: p.desc,
       specs: p.specs
     });
+  });
+});
+
+// ===== 每个品类追加 1 个新产品（同款式多一个 SKU/图）=====
+// hoodie 与 Sweatpants 使用站内未引用的真实新图（h7 / sp10）；
+// 其余品类（tee/jacket/cargo/vest）暂无新图，暂时复用同类现有图占位，补到真图后仅需替换下方 image 路径即可。
+const extraProducts = [
+  { baseId: 'heavyweight-terry-hoodie', img: '/y/h7.avif',      skuIdx: 6 }, // 真实新图
+  { baseId: 'oversized-graphic-tee',    img: '/y/t4.avif',       skuIdx: 6 }, // 占位图
+  { baseId: 'Baseball-jacket',          img: '/y/jk2.avif',      skuIdx: 6 }, // 占位图
+  { baseId: 'Sweatpants',               img: '/y/sp10.avif',     skuIdx: 6 }, // 真实新图
+  { baseId: 'cargo-pants',              img: '/y/cargo pant2.avif', skuIdx: 6 }, // 占位图
+  { baseId: 'vest',                     img: '/y/tanktop5.avif', skuIdx: 9 }  // 占位图（vest 现有已到 -8，新增 -9）
+];
+extraProducts.forEach(function(ep) {
+  const p = baseProducts.find(function(b) { return b.id === ep.baseId; });
+  if (!p) return;
+  products.push({
+    id: p.id + '-' + ep.skuIdx,
+    name: p.name + ' ' + ep.skuIdx,
+    category: p.category,
+    categoryLabel: p.categoryLabel,
+    badge: '',
+    image: ep.img,
+    images: [ep.img],
+    moq: p.moq,
+    leadTime: p.leadTime,
+    fabric: p.fabric,
+    sku: p.sku + '-' + ep.skuIdx,
+    desc: p.desc,
+    specs: p.specs
   });
 });
 
