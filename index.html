@@ -2201,7 +2201,7 @@ const baseProducts = [
     categoryLabel: 'Tank Top',
     badge: '',
     image: '/y/tanktop2.avif',
-    images: ['/y/tanktop3.avif', '/y/tanktop6.avif', '/y/tanktop1.avif', '/y/tanktop5.avif', '/y/tanktop7.avif', '/y/tanktop8.avif', '/y/tanktop9.avif'],
+    images: ['/y/tanktop3.avif', '/y/tanktop6.avif', '/y/tanktop1.avif', '/y/tanktop5.avif'],
     moq: '100 pcs',
     leadTime: '20-25 days',
     fabric: '100% Cotton ',
@@ -2247,11 +2247,11 @@ baseProducts.forEach(function(p) {
 // 其余品类（tee/jacket/cargo/vest）暂无新图，暂时复用同类现有图占位，补到真图后仅需替换下方 image 路径即可。
 const extraProducts = [
   { baseId: 'heavyweight-terry-hoodie', img: '/y/h7.avif',      skuIdx: 6 }, // 真实新图
-  { baseId: 'oversized-graphic-tee',    img: '/y/t4.avif',       skuIdx: 6 }, // 占位图
-  { baseId: 'Baseball-jacket',          img: '/y/jk2.avif',      skuIdx: 6 }, // 占位图
-  { baseId: 'Sweatpants',               img: '/y/sp10.avif',     skuIdx: 6 }, // 真实新图
-  { baseId: 'cargo-pants',              img: '/y/cargo pant2.avif', skuIdx: 6 }, // 占位图
-  { baseId: 'vest',                     img: '/y/tanktop5.avif', skuIdx: 9 }  // 占位图（vest 现有已到 -8，新增 -9）
+  { baseId: 'oversized-graphic-tee',    img: '/y/t3.avif',       skuIdx: 6 }, // 占位图
+  { baseId: 'Baseball-jacket',          img: '/y/jk5.avif',      skuIdx: 6 }, // 占位图
+  { baseId: 'Sweatpants',               img: '/y/sp3.avif',     skuIdx: 6 }, // 真实新图
+  { baseId: 'cargo-pants',              img: '/y/cargo pant6.avif', skuIdx: 6 }, // 占位图
+  { baseId: 'vest',                     img: '/y/tanktop7.avif', skuIdx: 9 }  // 占位图（vest 现有已到 -8，新增 -9）
 ];
 extraProducts.forEach(function(ep) {
   const p = baseProducts.find(function(b) { return b.id === ep.baseId; });
