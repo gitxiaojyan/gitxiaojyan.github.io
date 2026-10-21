@@ -2679,6 +2679,14 @@ document.getElementById('contactForm').addEventListener('submit', async function
 
   try {
     await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params);
+    // Meta Pixel：询盘表单提交成功，上报 Lead 事件（高质量转化）
+    if (window.fbq) {
+      fbq('track', 'Lead', {
+        content_name: 'Contact Form',
+        content_category: params.category || 'Other',
+        quantity: params.quantity || ''
+      });
+    }
     // 发送成功：隐藏表单，显示成功提示
     this.style.display = 'none';
     document.getElementById('formSuccess').classList.add('show');
@@ -2690,6 +2698,20 @@ document.getElementById('contactForm').addEventListener('submit', async function
     alert('Sorry, sending failed. Please try again, or email us directly at ' + FALLBACK_EMAIL);
   }
 });
+
+// ===== Meta Pixel：WhatsApp 链接点击统一上报 Contact 事件 =====
+// 覆盖所有 wa.me 链接：联系页电话、页脚社交图标、右下角浮动按钮、产品详情页按钮
+document.addEventListener('click', function(e) {
+  const waLink = e.target.closest('a[href*="wa.me"]');
+  if (!waLink) return;
+  if (window.fbq) {
+    fbq('track', 'Contact', {
+      channel: 'whatsapp',
+      content_name: 'WhatsApp Click',
+      content_url: window.location.pathname
+    });
+  }
+}, true);
 
 // ===== Back to Top (rAF-throttled) =====
 const backTop = document.getElementById('backTop');
